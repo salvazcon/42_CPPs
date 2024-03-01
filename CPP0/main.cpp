@@ -1,4 +1,9 @@
-#include "iostream":
+#include <iostream>
+#include <string>
+#include <stdio.h>
+
+# include "Phonebook.hpp"
+# include "Contact.hpp"
 
 /* void    ft_search()
 {
@@ -38,8 +43,8 @@ void    ft_add(Phonebook *p_list)
         std::cout << "Datos invalidos, introduzcalos de nuevo";
         ft_add();
     }
-    Contact nodo(input[0], input[1], input[2], input[3], input[4]);
-    (*p.list).add_node(nodo);
+    Contact nodo(input[0], input[1], input[2], input[3], input[4]); // asignar esto en el .hpp
+    (*p.list).add_node(nodo); // necesitamos realizar esta funcion
 }
 
 int main()
