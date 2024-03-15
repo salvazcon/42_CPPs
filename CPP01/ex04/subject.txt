@@ -1,0 +1,11 @@
+Cree un programa que tome tres parámetros en el siguiente orden: un nombre de fichero y
+dos cadenas, s1 y s2.
+
+Abrirá el fichero <nombredefichero> y copiará su contenido en un nuevo fichero
+    <nombredearchivo>.replace, sustituyendo cada aparición de s1 por s2.
+
+El uso de funciones de manipulación de archivos en C está prohibido y se considerará trampa. Todas las
+las funciones miembro de la clase std::string están permitidas, excepto replace. Utilícelas ¡sabiamente!
+
+Por supuesto, maneja las entradas inesperadas y los errores. Tienes que crear y entregar tus
+propias pruebas para asegurar que tu programa funciona como se espera.

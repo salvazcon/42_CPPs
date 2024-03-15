@@ -1,7 +1,6 @@
-NAME		= megaphone
-SRCS		= main.cpp, Zombie.cpp, newZombie.cpp, randomChump.cpp
+NAME		= horde
+SRCS		= main.cpp
 OBJS		= ${SRCS:.cpp=.o}
-DEPS		= ${SRCS:.cpp=.d}
 CC			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f

@@ -1,0 +1,21 @@
+Escribe un programa que contenga:
+
+  - Una variable cadena inicializada a "HI ESTO ES CEREBRO".
+  - stringPTR: Un puntero a la cadena.
+  - cadenaREF: Una referencia a la cadena.
+
+Tu programa tiene que imprimir:
+
+  - La dirección de memoria de la variable cadena.
+  - La dirección de memoria de stringPTR.
+  - La dirección de memoria de stringREF.
+
+Y luego:
+
+  - El valor de la variable cadena.
+  - El valor apuntado por stringPTR.
+  - El valor apuntado por stringREF.
+
+Eso es todo, sin trucos. El objetivo de este ejercicio es desmitificar las referencias que pueden
+parecer completamente nuevas. Aunque hay algunas pequeñas diferencias, esta es otra sintaxis
+para algo que ya haces: manipulación de direcciones
