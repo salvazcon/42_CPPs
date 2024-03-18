@@ -1,0 +1,40 @@
+¿Conoces a Harl? Todos lo conocemos, ¿verdad? En caso de que no lo conozcas, descubre a continuación el tipo de
+comentarios que hace Harl. Están clasificados por niveles:
+
+    - Nivel "DEBUG": Los mensajes de depuración contienen información contextual. Se utilizan
+    para el diagnóstico de problemas.
+    Ejemplo: "Me encanta tener bacon extra para mi hamburguesa 7XL-double-cheese-triple-pickle-specialketchup. De verdad".
+
+    - Nivel "INFO": Estos mensajes contienen amplia información. Son útiles para
+    rastrear la ejecución de un programa en un entorno de producción.
+    Ejemplo: "No puedo creer que añadir tocino extra cueste más dinero. No has puesto
+    ¡suficiente bacon en mi hamburguesa! Si lo hubieras hecho, no estaría pidiendo más".
+
+    - Nivel "ADVERTENCIA": Los mensajes de advertencia indican un problema potencial en el sistema.
+    Sin embargo, puede ser manejado o ignorado.
+    Ejemplo: "Creo que merezco un poco de bacon extra gratis. Llevo viniendo
+    años mientras que tú empezaste a trabajar aquí desde el mes pasado".
+
+    - Nivel "ERROR": Estos mensajes indican que se ha producido un error irrecuperable.
+    Suele tratarse de un problema crítico que requiere intervención manual.
+    Ejemplo: "¡Esto es inaceptable! Quiero hablar con el gerente ahora".
+
+Va a automatizar Harl. No será difícil porque siempre dice lo mismo.
+siempre lo mismo. Tienes que crear una clase Harl con las siguientes funciones miembro privadas:
+
+    - void debug( void );
+    - void info( void );
+    - void warning( void );
+    - void error( void );
+
+Harl también tiene una función miembro pública que llama a las cuatro funciones miembro anteriores
+dependiendo del nivel pasado como parámetro:
+
+    void complain( std::string nivel );
+
+El objetivo de este ejercicio es utilizar punteros a funciones miembro. Esto no es una
+sugerencia. Harl tiene que quejarse sin usar un bosque de if/else if/else. No se lo piensa
+dos veces.
+
+Crea y entrega tests para demostrar que Harl se queja mucho. Puedes usar los ejemplos
+de comentarios listados arriba en el tema u optar por usar comentarios propios.
