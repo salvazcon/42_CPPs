@@ -1,0 +1,66 @@
+Crees que conoces los números enteros y los de coma flotante. Qué mono.
+
+Hasta hoy, cada número que utilizabas en tu código era básicamente un entero o un
+punto flotante, o cualquiera de sus variantes (short, char, long, double, etc.).
+Después de leer el artículo anterior, es seguro asumir que los números enteros y los 
+de coma flotante tienen características opuestas.
+
+Pero hoy, las cosas van a cambiar. Vas a descubrir un nuevo e impresionante tipo de número
+números: ¡los números de coma fija! Siempre ausentes de los tipos escalares de la mayoría de los lenguajes,
+los números de punto fijo ofrecen un valioso equilibrio entre rendimiento, exactitud, rango y
+precisión. Esto explica por qué los números de coma fija son especialmente aplicables a los gráficos por 
+ordenador, el procesamiento de sonido o la programación científica. gráficos, el procesamiento de sonido o 
+la programación científica, por nombrar sólo algunos.
+
+Como C++ carece de números en coma fija, va a añadirlos. Este artículo de
+Berkeley es un buen comienzo.
+
+Crear una clase en Forma Canónica Ortodoxa que represente un número en coma fija:
+	- Miembros privados:
+		◦ Un entero para almacenar el valor del número de punto fijo.
+		◦ Un entero constante estático para almacenar el número de bits fraccionarios. Su valor
+		será siempre el entero literal 8.
+	- Miembros públicos:
+		◦ Un constructor por defecto que inicializa el valor del número de punto fijo a 0.
+		◦ Un constructor de copia.
+		◦ Una sobrecarga del operador de asignación de copia.
+		◦ Un destructor.
+		◦ Una función miembro int getRawBits( void ) const;
+			que devuelve el valor crudo del valor de punto fijo.
+		◦ Una función miembro void setRawBits( int const raw );
+			que establece el valor en bruto del número de punto fijo.
+
+Running this code:
+	#include <iostream>
+	int main( void ) {
+		Fixed a;
+		Fixed b( a );
+		Fixed c;
+
+		c = b;
+
+		std::cout << a.getRawBits() << std::endl;
+		std::cout << b.getRawBits() << std::endl;
+		std::cout << c.getRawBits() << std::endl;
+		return 0;
+	}
+
+Should output something similar to:
+	$> ./a.out
+	Default constructor called
+	Copy constructor called
+	Copy assignment operator called // <-- This line may be missing depending on your implementation
+	getRawBits member function called
+	Default constructor called
+	Copy assignment operator called
+	getRawBits member function called
+	getRawBits member function called
+	0
+	getRawBits member function called
+	0
+	getRawBits member function called
+	0
+	Destructor called
+	Destructor called
+	Destructor called
+	$>
