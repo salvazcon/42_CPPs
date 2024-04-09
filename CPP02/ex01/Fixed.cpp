@@ -1,0 +1,63 @@
+#include "Fixed.hpp"
+
+Fixed::~Fixed()
+{ 
+	std::cout << "Destructor called" << std::endl; 
+}
+
+Fixed::Fixed(): i(0)
+{ 
+	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int n): i(n << 8)
+{
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float f)
+{
+	std::cout << "Float constructor called" << std::endl;
+	i = roundf(f * (1 << j));
+}
+
+Fixed::Fixed(const Fixed &cp)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	this->i = cp.i;
+}
+
+int Fixed::getRawBits( void ) const
+{
+	//std::cout << "getRawBits member function called" << std::endl;
+	return (this->i);
+}
+
+void Fixed::setRawBits (int const raw)
+{
+	//std::cout << "setRawBits member function called" << std::endl;
+	this->i = raw;
+}
+
+float	Fixed::toFloat(void) const
+{
+	return (float)this->getRawBits() / (1 << j);
+}
+
+int		Fixed::toInt(void) const
+{
+	return (this->getRawBits() / (1 << j));
+}
+
+std::ostream& operator<<(std::ostream& stout, const Fixed& Fixed)
+{
+	stout << Fixed.toFloat();
+	return stout;
+}
+
+Fixed& Fixed::operator=(const Fixed &other)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->i = other.getRawBits();
+	return *this;
+}
