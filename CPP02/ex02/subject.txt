@@ -1,0 +1,56 @@
+Añade funciones públicas a tu clase para sobrecargar los siguientes operadores:
+
+- Los 6 operadores de comparación: >, <, >=, <=, == y !=.
+- Los 4 operadores aritméticos: +, -, *, y /.
+- Los 4 operadores de incremento/decremento 
+ (pre-incremento y post-incremento, pre-decremento y post-decremento)
+ , que incrementarán o decrementarán el valor de punto fijo desde el 'ϵ' 
+ representable más pequeño como '1 + ϵ > 1'. 
+ 
+Añade estas cuatro funciones miembro públicas sobrecargadas a tu clase:
+
+- Una función miembro estática min que toma como parámetros dos 
+referencias sobre números en coma fija, y devuelve una referencia 
+al más pequeño. 
+
+- Una función miembro estática min que toma como parámetros dos 
+referencias a números constantes en coma fija, y devuelve una referencia
+al más pequeño. 
+ 
+- Una función miembro estática max que toma como parámetros dos 
+referencias a números en coma fija, y devuelve una referencia al mayor. 
+
+- Una función miembro estática max que toma como parámetros dos 
+referencias a números constantes en coma fija, y devuelve una referencia
+ al mayor. 
+
+Depende de ti probar cada característica de tu clase. Sin embargo, 
+ejecutando el código de abajo:
+
+#include <iostream>
+
+int main( void ) {
+    Fixed a;
+    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << a << std::endl;
+    std::cout << a++ << std::endl;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    std::cout << Fixed::max( a, b ) << std::endl;
+    return 0;
+}
+
+Debería salir algo como (para mayor legibilidad, los mensajes de 
+constructor/destructor se han eliminado en el ejemplo de abajo):
+
+$> ./a.out
+    0
+    0.00390625
+    0.00390625
+    0.00390625
+    0.0078125
+    10.1016
+    10.1016
+$
