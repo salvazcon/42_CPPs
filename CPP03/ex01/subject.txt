@@ -1,3 +1,4 @@
+
 Como nunca se tienen suficientes ClapTraps, ahora crearemos un robot derivado. 
 Se llamará ScavTrap y heredará los constructores y el destructor de ClapTrap.
 Sin embargo, sus constructores, destructor y attack() imprimirán mensajes diferentes.

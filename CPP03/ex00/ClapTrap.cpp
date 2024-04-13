@@ -8,11 +8,11 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "Constructor called" << std::endl;
     this->name = name;
 	this->hp = 10;
 	this->ps = 10;
 	this->power = 0;
+    std::cout << "Constructor called" << std::endl;
 	return;
 }
 
@@ -30,7 +30,7 @@ void ClapTrap::attack(const std::string& target)
             std::cout << "ClapTrap " << this->name << " have no energy left" << std::endl;
     }
     else
-        std::cout << "ClapTrap " << this->name << " is dead" << std::endl;
+        std::cout << "ClapTrap " << this->name << " is dead!" << std::endl;
         
 }
 

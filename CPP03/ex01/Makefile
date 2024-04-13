@@ -1,6 +1,7 @@
 NAME		= program
 SRCS		= main.cpp \
-				ClapTrap.cpp
+				ClapTrap.cpp\
+				ScavTrap.cpp
 OBJS		= ${SRCS:.cpp=.o}
 DEPS		= ${SRCS:.cpp=.d}
 CC			= c++
