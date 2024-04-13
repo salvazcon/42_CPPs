@@ -1,0 +1,22 @@
+Hacer ClapTraps probablemente está empezando a ponerte de los nervios.
+
+Ahora, implementar una clase FragTrap que hereda de ClapTrap. Es muy similar a ScavTrap. 
+Sin embargo, sus mensajes de construcción y destrucción deben ser diferentes. El 
+encadenamiento correcto de construcción/destrucción debe mostrarse en tus pruebas. 
+Cuando se crea un FragTrap, el programa comienza construyendo un ClapTrap. 
+La destrucción es en orden inverso.
+
+Lo mismo para los atributos, pero con valores diferentes esta vez:
+
+    - Nombre, que se pasa como parámetro a un constructor
+    - Puntos de golpe (100), representan la salud de la ClapTrap
+    - Puntos de energía (100)
+    - Daño de ataque (30)
+
+FragTrap también tiene una capacidad especial: 
+
+    void highFivesGuys(void);
+    
+Esta función miembro muestra una petición positiva de high fives en la salida estándar.
+
+    De nuevo, añade más pruebas a tu programa. 

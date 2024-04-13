@@ -1,0 +1,28 @@
+Primero, ¡hay que implementar una clase! ¡Qué original! 
+Se llamará ClapTrap y tendrá los siguientes atributos privados 
+inicializados a los valores especificados entre paréntesis:
+ 
+- Nombre, que se pasa como parámetro a un constructor
+- Puntos de golpe (10), representan la salud de la ClapTrap
+- Puntos de energía (10)
+- Daño de ataque (0) 
+
+Añade las siguientes funciones miembro públicas para que la ClapTrap tenga un aspecto más realista:
+
+- void attack(const std::string& target);
+- void takeDamage(unsigned int amount);
+- void beRepaired(unsigned int amount); 
+
+Cuando ClapTrack ataca, hace que su objetivo pierda  <attack damage> puntos de golpe. Cuando ClapTrap 
+se repara, obtiene  <amount> puntos de golpe. Atacar y reparar cuestan 1 punto de energía cada uno. 
+Por supuesto, ClapTrap no puede hacer nada si no le quedan puntos de vida o energía.
+
+En todas estas funciones miembro, hay que imprimir un mensaje para describir lo que ocurre. 
+Por ejemplo, la función attack() puede mostrar algo como (por supuesto, sin los corchetes angulares):
+
+    ClapTrap <name> attacks <target>, causing <damage> points of damage!
+
+Los constructores y destructores también deben mostrar un mensaje, para que tus compañeros-evaluadores
+puedan ver fácilmente que han sido llamados.
+
+Implementa y entrega tus propias pruebas para asegurarte de que tu código funciona como se espera.
