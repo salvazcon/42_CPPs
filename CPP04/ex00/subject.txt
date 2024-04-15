@@ -1,0 +1,39 @@
+Para cada ejercicio, tienes que proporcionar las pruebas más completas que puedas.
+Los constructores y destructores de cada clase deben mostrar mensajes específicos. 
+No utilices el mismo mensaje para todas las clases. 
+
+Empieza implementando una clase base simple llamada Animal. Tiene un atributo protegido: 
+
+    - std::string type;
+    
+    Implementa una clase Perro que herede de Animal.
+    Implementa una clase Gato que herede de Animal. 
+
+Estas dos clases derivadas deben establecer su campo type en función de su nombre.
+Entonces, el tipo del Perro será inicializado a "Perro", y el tipo del Gato será inicializado
+a "Gato". El tipo de la clase Animal puede dejarse vacío o establecerse al valor de su elección.
+
+Cada animal debe ser capaz de utilizar la función miembro:
+makeSound() 
+Imprimirá un sonido apropiado (los gatos no ladran)
+
+La ejecución de este código debería imprimir los sonidos específicos de las clases Dog y Cat, 
+no los de Animal. int 
+
+    int main()
+    {
+        const Animal* meta = new Animal();
+        const Animal* j = new Dog();
+        const Animal* i = new Cat();
+        std::cout << j->getType() << " " << std::endl;
+        std::cout << i->getType() << " " << std::endl;
+        i->makeSound(); //will output the cat sound!
+        j->makeSound();
+        meta->makeSound();
+        ...
+        return 0;
+    }
+
+Para asegurarte de que has entendido cómo funciona, implementa una clase WrongCat que herede de una
+clase WrongAnimal. Si sustituyes el Animal y el Gato por los incorrectos en el código anterior, el
+WrongCat debería emitir el sonido WrongAnimal. Implementa y entrega más pruebas que las anteriores.
