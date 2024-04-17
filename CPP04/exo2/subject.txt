@@ -1,0 +1,6 @@
+Crear objetos Animales no tiene sentido después de todo. Es cierto, ¡no emiten ningún sonido! 
+
+Para evitar posibles errores, la clase Animal por defecto no debería ser instanciable.
+Arregla la clase Animal para que nadie pueda instanciarla. Todo debería funcionar como antes.
+
+Si quieres, puedes actualizar el nombre de la clase añadiendo un prefijo A a Animal.

@@ -1,0 +1,29 @@
+Los constructores y destructores de cada clase deben mostrar mensajes específicos.
+
+Implementa una clase Cerebro.
+Contiene un array de 100 std::string llamado ideas. 
+De esta forma, Perro y Gato tendrán un atributo Brain* privado. 
+En la construcción, Perro y Gato crearán su Cerebro usando new Brain();
+En la destrucción, Perro y Gato borrarán su Cerebro.
+
+En tu función principal, crea y rellena un array de objetos Animal. La mitad serán
+objetos Perro y la otra mitad objetos Gato. Al final de la ejecución de tu programa,
+haz un bucle sobre este array y borra cada Animal. Debe borrar directamente perros y
+gatos como Animales. Los destructores apropiados deben ser llamados en el orden esperado. 
+
+No olvides comprobar si hay fugas de memoria.
+
+Una copia de un Perro o un Gato no debe ser superficial. Por lo tanto, 
+¡tienes que comprobar que tus copias son copias profundas! 
+
+    int main()
+    {
+        const Animal* j = new Dog();
+        const Animal* i = new Cat();
+        delete j;//should not create a leak
+        delete i;
+        ...
+        return 0;
+    }
+
+Realice y entregue más pruebas que las indicadas anteriormente
