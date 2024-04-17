@@ -12,16 +12,18 @@ class ClapTrap
           int ps;
           int power;
 	public:
-          ClapTrap( void );
-	     ClapTrap(std::string name);
-          ~ClapTrap();
-          void attack(const std::string& target);
-          void takeDamage(unsigned int amount);
-          void beRepaired(unsigned int amount);
-          std::string getName(void);
-          int getPower(void);
-          int getPs(void);
-          int getHp(void);
+        ~ClapTrap();
+        ClapTrap( void );
+        ClapTrap(std::string name);
+        ClapTrap(const ClapTrap &cp);
+        ClapTrap& operator=(const ClapTrap &other);
+        void attack(const std::string& target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
+        std::string getName(void);
+        int getPower(void);
+        int getPs(void);
+        int getHp(void);
 };
 
 #endif

@@ -23,6 +23,22 @@ ClapTrap::ClapTrap(std::string name)
     std::cout << "Constructor called" << std::endl;
 }
 
+ClapTrap& ClapTrap::operator=(const ClapTrap &other)
+{
+	this->name = other.name;
+	this->hp = other.hp;
+	this->ps = other.ps;
+	this->power = other.power;
+	std::cout << "Copy assignment operator called" << std::endl;
+	return *this;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &cp): name(cp.name), hp(cp.hp), ps(cp.ps), power(cp.power)
+{
+	std::cout << "Copy constructor called" << std::endl;
+    return;
+}
+
 void ClapTrap::attack(const std::string& target)
 {
     if(this->hp > 0)
