@@ -37,6 +37,7 @@ FragTrap::FragTrap(const FragTrap &cp): ClapTrap(cp)
 {
 	std::cout << "FragTrap copy constructor called" << std::endl;
 	*this = cp;
+	return;
 }
 
 void FragTrap::highFivesGuys()

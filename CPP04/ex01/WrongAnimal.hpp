@@ -10,7 +10,7 @@ class WrongAnimal
         std::string type;
     private:
     public:
-        ~WrongAnimal(void);
+        virtual ~WrongAnimal(void);
         WrongAnimal(void);
         WrongAnimal(const WrongAnimal &cp);
         WrongAnimal& operator=(const WrongAnimal &other);

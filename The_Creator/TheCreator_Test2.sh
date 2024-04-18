@@ -35,10 +35,11 @@ class $NAME
     public:
         $NAME( void );
         ~$NAME();
-    
-}
+        $NAME(const $NAME &cp);
+		$NAME& operator=(const $NAME &other);
+};
 
-#endif;" >  $NAME.hpp
+#endif" >  $NAME.hpp
 
     echo "#include \"$NAME.hpp\"
 
@@ -52,6 +53,19 @@ $NAME::$NAME( void )
 {
     std::cout << \"$NAME Constructor called\" << std::endl;
     return ;
+}
+
+$NAME& $NAME::operator=(const $NAME &other)
+{
+    ... (<-- Datos a copiar.)
+	std::cout << "$NAME copy assignment operator called" << std::endl;
+	return *this;
+}
+
+$NAME::$NAME(const $NAME &cp)
+{
+	std::cout << "$NAME copy constructor called" << std::endl;
+	*this = cp;
 }" > $NAME.cpp
 done
 if [ "$#" -eq "0" ]; then

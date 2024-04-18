@@ -12,8 +12,8 @@ class Animal
     private:
     
     public:
+        virtual ~Animal(void);
         Animal(void);
-        ~Animal(void);
         Animal(const Animal &cp);
         Animal& operator=(const Animal &other);
         virtual void makeSound( void ) const;
