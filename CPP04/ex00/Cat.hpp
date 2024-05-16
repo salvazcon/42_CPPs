@@ -10,8 +10,8 @@ class Cat: public Animal
     protected:
     private:
     public:
-        ~Cat(void);
         Cat(void);
+        ~Cat(void);
 	    Cat(const Cat &cp);
         Cat& operator=(const Cat &other);
         virtual void makeSound( void ) const;

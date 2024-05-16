@@ -12,11 +12,6 @@ Animal::Animal( void ): type("Null")
     return ;
 }
 
-void Animal::makeSound(void) const
-{
-    std::cout << "Default Sound" << std::endl;
-}
-
 Animal& Animal::operator=(const Animal &other)
 {
 	std::cout << "Animal copy assignment operator called" << std::endl;
@@ -28,6 +23,11 @@ Animal::Animal(const Animal &cp): type(cp.type)
 {
 	std::cout << "Animal copy constructor called" << std::endl;
     return;
+}
+
+void Animal::makeSound(void) const
+{
+    std::cout << "Default Sound" << std::endl;
 }
 
 void Animal::setType(std::string type)

@@ -10,8 +10,8 @@ class Dog: public Animal
     protected:
     private:
     public:
-        ~Dog(void);
         Dog(void);
+        ~Dog(void);
         Dog(const Dog &cp);
         Dog& operator=(const Dog &other);
         virtual void makeSound( void ) const;

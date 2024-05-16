@@ -8,8 +8,8 @@ Cat::~Cat()
 
 Cat::Cat( void )
 {
-    this->type = "Cat";
     std::cout << "Cat Constructor called" << std::endl;
+    this->type = "Cat";
     return ;
 }
 
