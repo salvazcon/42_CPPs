@@ -20,3 +20,4 @@ class WrongAnimal
 };
 
 #endif
+ 
