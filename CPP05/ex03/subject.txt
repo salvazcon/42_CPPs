@@ -1,0 +1,29 @@
+Ejercicio 03: Al menos esto supera hacer café
+
+Porque rellenar formularios ya es bastante molesto, sería cruel pedir a nuestros burócratas
+que lo hicieran todo el día. Afortunadamente, existen los becarios. En este ejercicio, tienes que implementar
+la clase Pasante. El becario no tiene nombre, ni grado, ni características únicas. Lo único que
+cosa que les importa a los burócratas es que haga su trabajo.
+
+Sin embargo, el becario tiene una capacidad importante: la función makeForm(). Toma
+dos cadenas. La primera es el nombre de un formulario y la segunda es el destino del
+formulario. Devuelve un puntero a un objeto Form (cuyo nombre es el pasado como parámetro)
+cuyo destino se inicializará con el segundo parámetro.
+
+Imprimirá algo como
+
+El interno crea <form>
+
+Si el nombre del formulario pasado como parámetro no existe, imprimirá un mensaje de error explícito.
+
+Debes evitar soluciones ilegibles y feas como usar un bosque if/elseif/else. Este
+tipo de cosas no serán aceptadas durante el proceso de evaluación. Ya no estás en Piscine
+(pool). Como de costumbre, tienes que probar que todo funciona como se espera.
+
+Por ejemplo, el código de abajo crea un RobotomyRequestForm dirigido a «Bender»:
+
+{
+    Intern someRandomIntern;
+    Form* rrf;
+    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+}

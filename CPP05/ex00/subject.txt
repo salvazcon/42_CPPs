@@ -1,0 +1,41 @@
+Ejercicio 00: Mamá, de mayor quiero ser burócrata. cuando sea mayor, ¡quiero ser burócrata!
+
+Tenga en cuenta que las clases de excepción no tienen que ser diseñadas en forma canónica 
+ortodoxa. forma canónica ortodoxa. Pero cualquier otra clase tiene que hacerlo!
+
+Diseñemos una pesadilla artificial de oficinas, pasillos, formularios y colas de espera.
+Suena divertido, ¿verdad? Lástima.
+
+Primero, empecemos por el engranaje más pequeño de esta vasta máquina burocrática: el Burócrata.
+Un burócrata debe tener:
+
+    - Un nombre constante.
+    - Y un grado que va de 1 (grado más alto posible) a 150 (grado más bajo posible).
+
+Cualquier intento de instanciar un Burócrata usando un grado inválido debe lanzar una excepción:
+
+    ya sea Bureaucrat::GradeTooHighException o Bureaucrat::GradeTooLowException.
+
+Proporcionarás getters para estos dos atributos: getName() y getGrade(). También implementarás dos
+funciones miembro para incrementar o decrementar el grado del burócrata. Si el grado está fuera de 
+rango, ambas lanzarán las mismas excepciones que el constructor. 
+
+Recuerda!!! Dado que el grado 1 es el más alto y 150 el más bajo, aumentar un grado 3 debería dar un
+grado 2 al burócrata. 
+
+Las excepciones lanzadas deben ser capturables usando los bloques try y catch:
+
+    try
+    {
+        /* hacer algunas cosas con los burócratas */
+    }
+    catch (std::exception & e).
+    {
+        /* manejar la excepción */
+    }
+
+Implementarás una sobrecarga del operador de inserción (") para imprimir algo como (sin los corchetes angulares):
+
+    <nombre>, grado de burócrata <grado>.
+
+Como de costumbre, entrega algunas pruebas para comprobar que todo funciona como se espera.

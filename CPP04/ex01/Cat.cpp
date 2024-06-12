@@ -3,13 +3,14 @@
 Cat::~Cat()
 {
     std::cout << "Cat Destructor called" << std::endl;
+    delete this->brain;
     return ;
 }
 
 Cat::Cat( void )
 {
     this->type = "Cat";
-    this->_brain = new Brain();
+    this->brain = new Brain();
     std::cout << "Cat Constructor called" << std::endl;
     return ;
 }
@@ -18,7 +19,7 @@ Cat& Cat::operator=(const Cat &other)
 {
 	std::cout << "Cat copy assignment operator called" << std::endl;
 	this->type = other.type;
-    this->_brain = other._brain;
+    this->brain = new Brain();
 	return *this;
 }
 
@@ -36,10 +37,10 @@ void Cat::makeSound(void) const
 
 void Cat::addIdea(std::string idea) const
 {
-	this->_brain->addIdea(idea);
+	this->brain->addIdea(idea);
 }
 
 std::string Cat::getIdea(int i) const
 {
-	return this->_brain->getIdea(i);
+	return this->brain->getIdea(i);
 }

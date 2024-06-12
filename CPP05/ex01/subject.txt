@@ -1,0 +1,36 @@
+Ejercicio 01: ¡Fórmense, gusanos!
+
+Ahora que tienes burócratas, vamos a darles algo que hacer.
+¿Qué mejor actividad podría haber que la de rellenar una pila de formularios?
+
+Entonces, hagamos una clase Formulario. Tiene:
+    - Un nombre constante.
+    - Un booleano que indica si está firmado (en construcción, no lo está).
+    - Un grado constante requerido para firmarlo.
+    - Y un grado constante requerido para ejecutarlo.
+
+Todos estos atributos son privados, no protegidos.
+
+Los grados del Formulario siguen las mismas reglas que se aplican al Burócrata. Así,
+se lanzarán las siguientes excepciones si un grado del formulario está fuera de los límites:
+
+    Form::GradeTooHighException y Form::GradeTooLowException.
+
+Igual que antes, escriba getters para todos los atributos y una sobrecarga del operador de inserción (<<)
+que imprima toda la información del formulario.
+
+Añade también una función miembro beSigned() al Formulario que toma un Burócrata como parámetro. Cambia
+el estado del formulario a firmado si el grado del burócrata es lo suficientemente alto (superior o 
+igual al requerido). Recuerda, el grado 1 es superior al grado 2.
+
+    Si el grado es demasiado bajo, lanza una Form::GradeTooLowException.
+
+Por último, añade una función miembro signForm() al Burócrata. Si el formulario está firmado, se imprimirá algo como:
+
+    <burocrata> firmado <formulario>
+
+Si no, imprimirá algo como:
+
+    <burocrata> no pudo firmar <formulario> porque <razón>.
+
+Implementa y entrega algunas pruebas para asegurarte de que todo funciona como se espera

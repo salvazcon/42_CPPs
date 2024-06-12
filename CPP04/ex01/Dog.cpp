@@ -3,6 +3,7 @@
 Dog::~Dog()
 {
     std::cout << "Dog Destructor called" << std::endl;
+    delete this->brain;
     return ;
 }
 

@@ -33,8 +33,8 @@ class $NAME
     private:
     
     public:
-        $NAME( void );
-        ~$NAME();
+        ~$NAME(void);
+        $NAME(void);
         $NAME(const $NAME &cp);
 		$NAME& operator=(const $NAME &other);
 };
@@ -57,14 +57,14 @@ $NAME::$NAME( void )
 
 $NAME& $NAME::operator=(const $NAME &other)
 {
-    ... (<-- Datos a copiar.)
-	std::cout << "$NAME copy assignment operator called" << std::endl;
+    //(<-- Datos a copiar.)
+	std::cout << \"$NAME copy assignment operator called\" << std::endl;
 	return *this;
 }
 
 $NAME::$NAME(const $NAME &cp)
 {
-	std::cout << "$NAME copy constructor called" << std::endl;
+	std::cout << \"$NAME copy constructor called\" << std::endl;
 	*this = cp;
 }" > $NAME.cpp
 done

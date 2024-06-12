@@ -10,7 +10,7 @@ class Dog: public Animal
 {
     protected:
     private:
-        Brain*	_brain;
+        Brain*	brain;
     public:
         ~Dog(void);
         Dog(void);
