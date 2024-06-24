@@ -1,12 +1,12 @@
 NAME		= program
 SRCS		= main.cpp \
-			Bureaucrat.cpp \
 			AForm.cpp \
-			PresidentialPardonForm.cpp
+			PresidentialPardonForm.cpp \
+			Bureaucrat.cpp
 
 OBJS		= ${SRCS:.cpp=.o}
 DEPS		= ${SRCS:.cpp=.d}
-CC			= c++
+CC			= clang++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
 

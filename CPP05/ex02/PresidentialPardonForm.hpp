@@ -4,13 +4,10 @@
 #include <string>
 #include <iostream>
 #include "AForm.hpp"
-#include "Bureaucrat.hpp"
 
-class Bureaucrat;
-
-class PresidentialPardonForm : public AForm
-{
+class PresidentialPardonForm : public AForm {
     protected:
+
     private:
         std::string target;
     
@@ -18,8 +15,9 @@ class PresidentialPardonForm : public AForm
         ~PresidentialPardonForm(void);
         PresidentialPardonForm(void);
         PresidentialPardonForm(std::string target);
-        //PresidentialPardonForm(const PresidentialPardonForm &cp);
-		//PresidentialPardonForm& operator=(const PresidentialPardonForm &other);
+        PresidentialPardonForm(const PresidentialPardonForm &cp);
+		PresidentialPardonForm& operator=(const PresidentialPardonForm &other);
+        std::string  getTarget(void);
         void    execute(Bureaucrat const & executor) const;
 };
 

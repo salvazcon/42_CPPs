@@ -1,10 +1,11 @@
 #ifndef  AFORM_HPP
 # define  AFORM_HPP
 
+#pragma once
+
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
 
 class Bureaucrat;
 
@@ -16,18 +17,19 @@ class AForm
         bool                sign;
         const   int         signGrade;
         const   int         execGrade;
+
     public:
         virtual ~AForm(void);
         AForm(void);
         AForm(std::string _name, int _signGrade, int _execGrade);
         AForm(const AForm &cp);
-		AForm& operator=(const AForm &other); //Por que lo privatizan???
+		AForm& operator=(const AForm &other);
         std::string         getName(void) const;
         bool                getSign(void) const;
         int                 getExecGrade(void) const;
         int                 getSignGrade(void) const;
-        void                beSigned(const Bureaucrat &Obj);
-        virtual void        execute(Bureaucrat const & executor) const = 0;
+        void                beSigned(Bureaucrat const& Obj);
+        virtual void        execute(Bureaucrat const& executor) const = 0;
     
         class GradeTooHighException: public std::exception 
         {
@@ -44,6 +46,14 @@ class AForm
                 return "Exception: The grade is too low.";
             }
         };
+
+        class NotSignedException: public std::exception
+        {
+		    virtual const char* what() const throw()
+            {
+			    return "already signed";
+	        }
+	    };
 };
 
 std::ostream&  operator<<(std::ostream &out, const AForm &Obj);
