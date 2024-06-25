@@ -4,11 +4,18 @@
 
 int main() {
 	{
+		//AForm* a = new AForm();
 		AForm* b = new PresidentialPardonForm("mike");
-		Bureaucrat a("Paco", 1);
+		Bureaucrat c("Paco", 5);
 
 		std::cout << *b << std::endl;
-		b->execute(a);
+		std::cout << c << std::endl;
+		c.executeForm(*b);
+		b->beSigned(c);
+		c.executeForm(*b);
+		c.decrementGrade();
+		std::cout << c << std::endl;
+		c.executeForm(*b);
 		delete b;
 		return 0;
 	}

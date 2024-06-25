@@ -51,7 +51,7 @@ class AForm
         {
 		    virtual const char* what() const throw()
             {
-			    return "already signed";
+			    return "Not signed";
 	        }
 	    };
 };
