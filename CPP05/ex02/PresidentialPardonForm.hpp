@@ -5,7 +5,8 @@
 #include <iostream>
 #include "AForm.hpp"
 
-class PresidentialPardonForm : public AForm {
+class PresidentialPardonForm : public AForm 
+{
     protected:
 
     private:
