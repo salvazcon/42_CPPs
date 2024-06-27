@@ -1,0 +1,18 @@
+Implementar una clase Serializer, que no será inicializable por el usuario de ninguna manera,
+con los siguientes métodos estáticos:
+
+uintptr_t serializar(Datos* ptr);
+Toma un puntero y lo convierte al tipo entero sin signo uintptr_t.
+
+Data* deserialize(uintptr_t raw);
+Toma un parámetro entero sin signo y lo convierte en un puntero a Data.
+
+Escribe un programa para probar que tu clase funciona como se espera.
+
+Debes crear una estructura Data no vacía (significa que tiene miembros de datos).
+
+Usa serialize() en la dirección del objeto Data y pasa su valor de retorno a
+deserialize(). A continuación, asegúrese de que el valor de retorno de deserialize() es igual al puntero original.
+puntero original.
+
+No olvides entregar los archivos de tu estructura de Datos.
