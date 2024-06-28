@@ -7,6 +7,6 @@ int main(int argc, char **argv) {
 		std::cerr << "Program must have exactly one parameter" << std::endl;
 		return 1;
 	}
-	convert(argv[1]);
+	ScalarConverter::convert(argv[1]);
 	return 0;
 }
