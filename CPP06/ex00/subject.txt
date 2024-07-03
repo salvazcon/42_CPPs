@@ -31,9 +31,9 @@ Primero tienes que detectar el tipo del literal pasado como parámetro, converti
 string a su tipo real, luego convertirlo explícitamente a los otros tres tipos de datos. Por último
 muestra los resultados como se muestra a continuación.
 
-Si una conversión no tiene sentido o se desborda, muestre un mensaje para informar al usuario de que la conversión de tipo es imposible.
-al usuario de que la conversión es imposible. Incluya cualquier encabezado que necesite para
-manejar límites numéricos y valores especiales
+Si una conversión no tiene sentido o se desborda, muestre un mensaje para informar al usuario de que 
+la conversión de tipo es imposible. al usuario de que la conversión es imposible. Incluya cualquier 
+encabezado que necesite para manejar límites numéricos y valores especiales
 
     ./convert 0
     char: Non displayable
