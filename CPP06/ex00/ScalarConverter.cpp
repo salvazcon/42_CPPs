@@ -60,8 +60,8 @@ void write_int(double d)
 
 void write_float(float f)
 {
-	std::cout.precision(10);
-	if (f - floorf(f) == 0)
+	float aux;
+	if (std::modf(f, &aux) == 0.0f)
 		std::cout << "float: " << f << ".0f" << std::endl;
 	else
 		std::cout << "float: " << f << "f" << std::endl;
@@ -69,78 +69,48 @@ void write_float(float f)
 
 void write_double(double d)
 {
-	std::cout.precision(10);
-	if (d - floorf(d) == 0)
+	double aux;
+	if (std::modf(d, &aux) == 0.0)
 		std::cout << "double: " << d << ".0" << std::endl;
 	else
 		std::cout << "double: " << d << std::endl;
 }
 
-void charPrinter(std::string str)
+void Writer(double d, float f, int i)
 {
-	double	d;
-	float	f;
-	int		i;
-
-	i = static_cast<int>(str[0]);
-	f = static_cast<float>(str[0]);
-	d = static_cast<double>(str[0]);
-
 	write_char(i);
 	write_int(d);
 	write_float(f);
 	write_double(d);
 }
 
-static void intPrinter(std::string str) 
+static void Printer(char* str, int n)
 {
 	double  d;
 	float   f;
 	int     i;
 
-	i = atoi(str.c_str());
-	f = static_cast<float>(i);
-	d = static_cast<double>(i);
-	
-	write_char(i);
-	write_int(d);
-	write_float(f);
-	write_double(d);
+	switch (n)
+	{
+		case 0:
+			Writer(static_cast<double>(str[0]), static_cast<float>(str[0]), static_cast<int>(str[0]));
+			break;
+		case 1:
+			i = atoi(str);
+			Writer(static_cast<double>(i), static_cast<float>(i), i);
+			break;
+		case 2:
+			f = strtof(str, NULL);
+			Writer(static_cast<double>(f), f, static_cast<int>(f));
+			break;
+		case 3:
+			d = strtod(str, NULL);
+			Writer(d, static_cast<float>(d), static_cast<int>(d));
+			break;
+	}
 }
 
-static void floatPrinter(std::string str) 
-{
-	double  d;
-	float   f;
-	int     i;
-
-	f = strtof(str.c_str(), NULL);
-	d = static_cast<double>(f);
-	i = static_cast<int>(f);
-	
-	write_char(i);
-	write_int(d);
-	write_float(f);
-	write_double(d);
-}
-
-static void doublePrinter(std::string str) 
-{
-	double  d;
-	float   f;
-	int     i;
-
-	d = strtod(str.c_str(), NULL);
-	f = static_cast<float>(d);
-	i = static_cast<int>(d);
-	
-	write_char(i);
-	write_int(d);
-	write_float(f);
-	write_double(d);
-}
-
-static int VarType(const std::string& str)
+static int Type(const std::string& str)
 {
 	if (str == "-inff" || str == "+inff" || str == "nanf")
 		return 4;
@@ -162,30 +132,14 @@ static int VarType(const std::string& str)
 
 void ScalarConverter::convert(char* str)
 {
-    int i = VarType(str);
-    switch (i)
-	{
-	case 0:
-		charPrinter(str);
-		break;
-	case 1:
-		intPrinter(str);
-		break;
-	case 2:
-		floatPrinter(str);
-		break;
-	case 3:
-		doublePrinter(str);
-		break;
-	case 4:
+    int i = Type(str);
+	if (i >= 0 && i <= 3)
+		Printer(str, i);
+	else if (i == 4)
 		SpecialFloatPrinter(str);
-		break;
-	case 5:
+	else if (i == 5)
 		SpecialDoublePrinter(str);
-		break;
-	default:
+	else
 		std::cerr << "impossible conversion" << std::endl;
-		break;
-	}
 }
 
