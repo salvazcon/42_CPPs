@@ -24,19 +24,19 @@ void identify(Base *p)
 	aux = dynamic_cast<A *>(p);
 	if (aux)
 	{
-		std::cout << "Type A" << std::endl;
+		std::cout << "A" << std::endl;
 		return ;
 	}
 	aux = dynamic_cast<B *>(p);
 	if (aux)
 	{
-		std::cout << "Type B" << std::endl;
+		std::cout << "B" << std::endl;
 		return ;
 	}
 	aux = dynamic_cast<C *>(p);
 	if (aux)
 	{
-		std::cout << "Type C" << std::endl;
+		std::cout << "C" << std::endl;
 		return ;
 	}
 	std::cout << "Unknown type" << std::endl;
@@ -47,17 +47,17 @@ void identify(Base &p)
 {
     try {
 		(void) dynamic_cast<A &>(p);
-		std::cout << "Type A" << std::endl;
+		std::cout << "A" << std::endl;
 		return ;
 	} catch (...) {}
 	try {
 		(void) dynamic_cast<B &>(p);
-		std::cout << "Type B" << std::endl;
+		std::cout << "B" << std::endl;
 		return ;
 	} catch (...) {}
 	try {
 		(void) dynamic_cast<C &>(p);
-		std::cout << "Type C" << std::endl;
+		std::cout << "C" << std::endl;
 		return ;
 	} catch (...) {}
 	std::cout << "Unknown type" << std::endl;
