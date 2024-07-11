@@ -19,14 +19,48 @@ Base* generate()
 
 void identify(Base *p) 
 {
-    (void) p;
-    std::cout << "not done" << std::endl;
+    Base* aux;
+	
+	aux = dynamic_cast<A *>(p);
+	if (aux)
+	{
+		std::cout << "Type A" << std::endl;
+		return ;
+	}
+	aux = dynamic_cast<B *>(p);
+	if (aux)
+	{
+		std::cout << "Type B" << std::endl;
+		return ;
+	}
+	aux = dynamic_cast<C *>(p);
+	if (aux)
+	{
+		std::cout << "Type C" << std::endl;
+		return ;
+	}
+	std::cout << "Unknown type" << std::endl;
+	
 }
 
 void identify(Base &p)
 {
-    (void) p;
-    std::cout << "not done" << std::endl;
+    try {
+		(void) dynamic_cast<A &>(p);
+		std::cout << "Type A" << std::endl;
+		return ;
+	} catch (...) {}
+	try {
+		(void) dynamic_cast<B &>(p);
+		std::cout << "Type B" << std::endl;
+		return ;
+	} catch (...) {}
+	try {
+		(void) dynamic_cast<C &>(p);
+		std::cout << "Type C" << std::endl;
+		return ;
+	} catch (...) {}
+	std::cout << "Unknown type" << std::endl;
 }
 
 int main() 
@@ -36,23 +70,19 @@ int main()
 	B b;
 	C c;
 	Base *aux;
-	
+
+	identify(&a);
+	identify(&b);
+	identify(&c);
+    std::cout << std::endl;
+	identify(a);
+	identify(b);
+	identify(c);
+	std::cout << std::endl;
+	std::cout << "Random Tests: " << std::endl;
 	for (int i = 0; i < 10; i++) {
 		aux = generate();
 		identify(aux);
 		delete aux;
 	}
-
-	Base base;
-	
-    std::cout << std::endl;
-	identify(&a);
-	identify(&b);
-	identify(&c);
-	identify(&base);
-	std::cout << std::endl;
-	identify(a);
-	identify(b);
-	identify(c);
-	identify(base);
 }
