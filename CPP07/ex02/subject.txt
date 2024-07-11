@@ -1,0 +1,25 @@
+Desarrolle una plantilla de clase Matriz que contenga elementos de tipo T y que implemente
+los siguientes comportamientos y funciones:
+
+- Construcción sin parámetro: Crea un array vacío.
+
+- Construcción con un unsigned int n como parámetro: Crea un array de n elementos inicializados por defecto.
+    
+    Sugerencia: Pruebe a compilar int * a = new int(); luego visualice *a.
+
+- Construcción por copia y operador de asignación. En ambos casos, la modificación del array
+array original o su copia después de copiar no debe afectar al otro array.
+
+- DEBES utilizar el operador new[] para asignar memoria. La asignación preventiva (asignar memoria por 
+adelantado) está prohibida. Tu programa nunca debe acceder a memoria no asignada.
+
+- Se puede acceder a los elementos mediante el operador de subíndice: [ ].
+
+- Cuando se accede a un elemento con el operador [ ], si su índice está fuera de los límites, se lanza
+ una excepción de tipo std::exception.
+
+- Una función miembro size() que devuelve el número de elementos de la matriz. Esta función miembro
+no toma parámetros y no debe modificar la instancia actual.
+
+Como de costumbre, asegúrate de que todo funciona como se espera y entrega un archivo main.cpp que contenga 
+tus pruebas.

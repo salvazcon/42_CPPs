@@ -1,0 +1,40 @@
+Implementa las siguientes plantillas de funciones:
+
+- swap: Intercambia los valores de dos argumentos dados. No devuelve nada.
+
+- min: Compara los dos valores pasados en sus argumentos y devuelve el menor de ellos.
+menor. Si los dos son iguales, devuelve el segundo.
+
+- max: Compara los dos valores pasados en sus argumentos y devuelve el mayor. Si los dos
+ son iguales, devuelve el segundo.
+
+Estas funciones pueden invocarse con cualquier tipo de argumento. El único requisito es
+que los dos argumentos sean del mismo tipo y admitan todos los operadores de comparación.
+de comparación.
+
+Las plantillas deben definirse en los ficheros de cabecera.
+
+    int main( void ) {
+        int a = 2;
+        int b = 3;
+        ::swap( a, b );
+        std::cout << "a = " << a << ", b = " << b << std::endl;
+        std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+        std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+        std::string c = "chaine1";
+        std::string d = "chaine2";
+        ::swap(c, d);
+        std::cout << "c = " << c << ", d = " << d << std::endl;
+        std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+        std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+        return 0;
+    }
+
+Output:
+
+    a = 3, b = 2
+    min(a, b) = 2
+    max(a, b) = 3
+    c = chaine2, d = chaine1
+    min(c, d) = chaine1
+    max(c, d) = chaine2
