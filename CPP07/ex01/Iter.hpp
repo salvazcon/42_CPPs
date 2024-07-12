@@ -5,27 +5,15 @@
 #include <string>
 
 template <typename T>
-void swap(T a, T b) {
-    T aux = a;
-    a = b;
-    b = aux;
+void	print(T a) {
+	std::cout << a << std::endl;
 }
 
-template <typename T>
-T max(T a, T b) {
-    return (a > b) ? a : b;
+template <typename T, typename U>
+void    iter(T* array, unsigned int len, U (*func)(T)) {
+	for (unsigned int i = 0; i < len; i++) {
+		func(array[i]);
+	}
 }
-
-template <typename T>
-T min(T a, T b) {
-    return (a < b) ? a : b;
-}
-
-class Iter
-{
-    protected:
-    private:
-    public:
-};
 
 #endif

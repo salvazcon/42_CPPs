@@ -1,18 +1,16 @@
-#include "Whatever.hpp"
+#include "Iter.hpp"
 
 int main( void ) 
 {
-    int a = 0;
-    int b = 0;
-    ::swap( a, b );
-    std::cout << "a = " << a << ", b = " << b << std::endl;
-    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-    std::string c = "chaine1";
-    std::string d = "chaine2";
-    ::swap(c, d);
-    std::cout << "c = " << c << ", d = " << d << std::endl;
-    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-    return 0;
+    {
+		int str[4];
+		str[0] = 1;
+		str[1] = 2;
+        str[2] = 3;
+		str[3] = 4;
+		iter(str, 4, print<int>);
+        
+		const char *arr[4] = {"hola", "adios", "paco", "hello kitty"};
+		iter(arr, 4, print<const char*>);
+	}
 }
