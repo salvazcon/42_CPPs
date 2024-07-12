@@ -6,7 +6,7 @@ int main( void )
 		int str[4];
 		str[0] = 1;
 		str[1] = 2;
-        str[2] = 3;
+                str[2] = 3;
 		str[3] = 4;
 		iter(str, 4, print<int>);
         
