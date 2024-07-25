@@ -1,0 +1,18 @@
+Un primer ejercicio fácil es la manera de empezar con buen pie.
+
+Escribe una función plantilla easyfind que acepte un tipo T. Toma dos parámetros.
+
+El primero es de tipo T y el segundo es un entero.
+
+Asumiendo que T es un contenedor de enteros, esta función tiene que encontrar la primera 
+ocurrencia del segundo parámetro en el primer parámetro.
+
+Si no encuentra ninguna ocurrencia, puede lanzar una excepción o devolver un valor de error
+de su elección. Si necesitas algo de inspiración, analiza cómo se comportan los contenedores
+estándar.
+
+Por supuesto, implementa y realiza tus propias pruebas para asegurarte de que todo funciona 
+como se espera. 
+
+No tienes que manejar contenedores asociativos.
+
