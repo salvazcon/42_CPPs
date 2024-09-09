@@ -15,4 +15,3 @@ Por supuesto, implementa y realiza tus propias pruebas para asegurarte de que to
 como se espera. 
 
 No tienes que manejar contenedores asociativos.
-

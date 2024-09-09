@@ -1,22 +1,27 @@
 # include "Phonebook.hpp"
+# include "Contact.hpp"
+#include <iostream>
+#include <string>
+#include <sstream>
 
 void	ft_print_10(std::string txt)
 {
-	int i = -1;
+	std::string::size_type i = 0;
 
-	while(++i < 10)
-	{
-		if(txt[i])
-		{
-			if(i == 9)
-				std::cout << ".";
-			else
-				std::cout << txt[i];
-		}
-		else
-			std::cout << " ";
-	}
-	return ;
+    while (i <= 9)
+    {
+        if (txt.length() > i)
+        {
+            if (i == 9)
+                std::cout << ".";
+            else
+                std::cout << txt[i];
+        }
+        else
+            std::cout << " ";
+        ++i;
+    }
+    return;
 }
 
 void	ft_search(Phonebook *phonebook)
@@ -32,13 +37,13 @@ void	ft_search(Phonebook *phonebook)
 	while(i < len)
 	{
 		std::cout << "|";
-		std::cout << list[i].get_id() << "         ";
+		std::cout << list[i].getId() << "         ";
 		std::cout << "|";
-		ft_print_10(list[i].get_f_name());
+		ft_print_10(list[i].getFname());
 		std::cout << "|";
-		ft_print_10(list[i].get_l_name());
+		ft_print_10(list[i].getLname());
 		std::cout << "|";
-		ft_print_10(list[i].get_n_name());
+		ft_print_10(list[i].getNname());
 		std::cout << "|" << std::endl;
 		i++;
 	}
@@ -47,19 +52,26 @@ void	ft_search(Phonebook *phonebook)
 	{
 		std::cout << "Introduce el id del contacto" << std::endl;
 		std::cout << "> ";
-			if (std::getline(std::cin, input).rdstate() == 0)
-				if (!input.empty() && input.length() == 1)
-					if(input.find_first_not_of("12345678") == std::string::npos)
-						if((i = std::stoi(input)) <= len)
-							break ;
+		if (std::getline(std::cin, input).rdstate() == 0)
+		{
+			if(input == "EXIT")
+				return ;
+			if (!input.empty() && input.length() == 1)
+				if(input.find_first_not_of("12345678") == std::string::npos)
+				{
+					std::stringstream ss(input);
+					if (ss >> i && i <= len && i > 0)
+						break;
+				}
 			std::cout << "\033[1;31m Invalid ID\033[0m" << std::endl;
+		}
 	}
 	std::cout << "|-------------------------------------------|" << std::endl;
-	std::cout << " * First name: " << list[i - 1].get_f_name() << std::endl;
-	std::cout << " * Last name: " << list[i - 1].get_l_name() << std::endl;
-	std::cout << " * Nickname: " << list[i - 1].get_n_name() << std::endl;
-	std::cout << " * Phone number: " << list[i - 1].get_p_number() << std::endl;
-	std::cout << " * Darkest secret:"<< list[i - 1].get_secret() << std::endl;
+	std::cout << " * First name: " << list[i - 1].getFname() << std::endl;
+	std::cout << " * Last name: " << list[i - 1].getLname() << std::endl;
+	std::cout << " * Nickname: " << list[i - 1].getNname() << std::endl;
+	std::cout << " * Phone number: " << list[i - 1].getPnumber() << std::endl;
+	std::cout << " * Darkest secret:"<< list[i - 1].getSecret() << std::endl;
 	std::cout << "|-------------------------------------------|" << std::endl;
 }
 
@@ -75,7 +87,8 @@ std::string	ft_parser(std::string msg, int i)
 			if (!input.empty())
 			{
 				if (i == 3 && input.find_first_not_of("0123456789") == std::string::npos)
-					return (input);
+					if(input.length() == 9)
+						return (input);
 				if (i != 3)
 					return (input);
 			}

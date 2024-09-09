@@ -1,5 +1,9 @@
 #include "Contact.hpp"
 
+Contact::~Contact(void){
+	return;
+}
+
 Contact::Contact(void)
 {
 	f_name = "";
@@ -8,10 +12,6 @@ Contact::Contact(void)
 	p_number = "";
 	secret = "";
 	id = 0;
-	return;
-}
-
-Contact::~Contact(void){
 	return;
 }
 
@@ -26,16 +26,16 @@ Contact::Contact(std::string f_name, std::string l_name, std::string n_name, std
 	return;
 }
 
-void		Contact::set_id(int id){ this->id = id; } //cambie esto, estaria bien???
+std::string	Contact::getFname(void){ return (this->f_name); }
 
-int			Contact::get_id(){ return(id); }
+std::string	Contact::getLname(void){ return (this->l_name); }
 
-std::string	Contact::get_f_name(void){ return (f_name); }
+std::string	Contact::getNname(void){ return (this->n_name); }
 
-std::string	Contact::get_l_name(void){ return (l_name); }
+std::string	Contact::getPnumber(void){ return (this->p_number); }
 
-std::string	Contact::get_n_name(void){ return (n_name); }
+std::string	Contact::getSecret(void){ return (this->secret); }
 
-std::string	Contact::get_p_number(void){ return (p_number); }
+int			Contact::getId(){ return(this->id); }
 
-std::string	Contact::get_secret(void){ return (secret); }
+void		Contact::setId(int id){ this->id = id; }

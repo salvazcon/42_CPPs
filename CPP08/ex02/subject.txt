@@ -41,6 +41,6 @@ como se espera.
     }
 
 Si lo ejecutas una primera vez con tu MutantStack, y una segunda vez sustituyendo el
-MutantStack con, por ejemplo, un std::list, las dos salidas deberían ser las mismas. En
+MutantStack con, por ejemplo, un std::list, las dos salidas deberían ser las mismas.
 Por supuesto, cuando pruebe otro contenedor, actualice el código con las funciones
 (push() puede convertirse en push_back()).

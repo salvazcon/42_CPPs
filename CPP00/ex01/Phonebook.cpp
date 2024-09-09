@@ -1,11 +1,11 @@
 #include "Phonebook.hpp"
 
-Phonebook::Phonebook(void){
-	len = 0;
+Phonebook::~Phonebook(void){
 	return;
 }
 
-Phonebook::~Phonebook(void){
+Phonebook::Phonebook(void){
+	len = 0;
 	return;
 }
 
@@ -16,12 +16,12 @@ void	Phonebook::add_nodo(Contact nodo)
 	if (i == 8)
 		i = 0;
 	list[i] = nodo;
-	list[i].set_id(i + 1);
+	list[i].setId(i + 1);
 	if (len < 8)
-		len++; //el valor length o size no existe en caso de ser un objeto creadp dese 0
+		len++;
 	i++;
 }
 
-Contact	*Phonebook::get_list(void){ return (list); } //aqui le meto el puntero para que me de por culisimo
+Contact	*Phonebook::get_list(void){ return (list); }
 
 int	Phonebook::get_len(void){ return (len); }
