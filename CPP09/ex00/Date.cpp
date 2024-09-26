@@ -16,7 +16,6 @@ Date::Date( void )
 
 Date::Date(std::string date) 
 {
-	std::string day, month, year;
     int i = 0;
 
 	if (date.length() != 10)
@@ -31,10 +30,9 @@ Date::Date(std::string date)
 			throw ErrorDate();
         i++;
 	}
-
-	year = stoi(date.substr(0, 4));
-	month = stoi(date.substr(5, 2));
-	day = stoi(date.substr(8, 2));
+	std::string year = stoi(date.substr(0, 4));
+	std::string month = stoi(date.substr(5, 2));
+	std::string day = stoi(date.substr(8, 2));
 
     if (month == 0 || month > 12 || day == 0)
 		return false;

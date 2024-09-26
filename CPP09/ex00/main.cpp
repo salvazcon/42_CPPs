@@ -1,41 +1,35 @@
-//#include "BitcoinExchange.hpp"
+#include "BitcoinExchange.hpp"
+#include "Date.hpp"
 #include <iostream>
 #include <fstream>
 #include <string>
 
-std::string ft_parser_date(std::string str)
+int fk_space(std::string str, int i, int size)
 {
-    int size = str.length();
-    std::string temp;
-    int i = 0;
-
-    while((i < size) && (str[i] == 32))
+    while((i < size) && ((str[i] == 32) || (str[i] == '|')))
         i++;
-    while((i < size) && (str[i] != 32) && (str[i] != '|'))
-    {
-        temp += str[i];
-        i++;
-    }
-    return temp;
+    return i;
 }
 
-std::string ft_parser_value(std::string str)
+std::string* ft_parser_data(std::string str)
 {
     int size = str.length();
-    std::string temp;
+    static std::string arr[2];
     int i = 0;
 
-    while((i < size) && (str[i] != '|'))
-        i++;
-    i++;
-    while((i < size) && (str[i] == 32))
-        i++;
-    while((i < size) && (str[i] != 32))
+    i = fk_space(str, i, size);
+    while((i < size) && (str[i] != 32) && (str[i] != '|'))
     {
-        temp += str[i];
+        arr[0] += str[i];
         i++;
     }
-    return temp;
+    i = fk_space(str, i, size);
+    while((i < size) && (str[i] != 32))
+    {
+        arr[1] += str[i];
+        i++;
+    }
+    return arr;
 }
 
     /* Error:
@@ -64,8 +58,9 @@ int main(int argc, char *argv[])
     std::string str;
     while (std::getline(fd, str))
     {
-        std::cout << "Primer dato: " << ft_parser_data(str) << std::endl;
-        std::cout << "Segundo dato: " << ft_parser_coin(str) << std::endl;
+        std::string* arr = ft_parser_data(str);
+        std::cout << "Primer dato: " << arr[0] << std::endl;
+        std::cout << "Segundo dato: " << arr[1] << std::endl;
     }
     fd.close();
     return 0;
