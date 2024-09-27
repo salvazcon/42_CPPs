@@ -30,23 +30,13 @@ Date::Date(std::string date)
 			throw ErrorDate();
         i++;
 	}
-	std::string year = stoi(date.substr(0, 4));
-	std::string month = stoi(date.substr(5, 2));
-	std::string day = stoi(date.substr(8, 2));
 
-    if (month == 0 || month > 12 || day == 0)
-		return false;
-	if (month == 2 && year % 4 == 0) {
-		if (day > 29)
-			return false;
-		else
-			return true;
-	}
-	if (DaysMonth[month - 1] < day)
-		return false;
-	return true;
-	/* if (!validDate()) //pareso extra
-		throw ErrorDate(); */
+	year = stoi(date.substr(0, 4));
+	month = stoi(date.substr(5, 2));
+	day = stoi(date.substr(8, 2));
+    
+	if (month == 0 || month > 12 || day == 0 | day > DaysMonth[month - 1])
+		throw ErrorDate();
 }
 
 Date& Date::operator=(const Date &other)

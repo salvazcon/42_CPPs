@@ -23,6 +23,7 @@ class Date
         ~Date(void);
         Date(void);
         Date(const Date &cp);
+        Date(std::string date);
 		Date& operator=(const Date &other);
 };
 
