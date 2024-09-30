@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
         {
             std::string		ext = ".replace";
             std::string		filename = argv[1] + ext;
-            std::ofstream	outfile(filename.c_str(), std::ios::binary); //cambia el string a const char *
+            std::ofstream	outfile(filename.c_str(), std::ios::binary);
             std::string line = "";
             while (std::getline(infile, line))
             {
