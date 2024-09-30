@@ -1,6 +1,5 @@
 NAME		= program
-SRCS		= main.cpp \
-				Fixed.cpp
+SRCS		= main.cpp Fixed.cpp
 OBJS		= ${SRCS:.cpp=.o}
 DEPS		= ${SRCS:.cpp=.d}
 CC			= c++

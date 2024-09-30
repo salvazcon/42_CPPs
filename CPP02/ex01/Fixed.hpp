@@ -10,14 +10,14 @@ class Fixed
 	private:
 		int i;
 		static const int j = 8;
+	
 	public:
+		~Fixed();
 		Fixed();
 		Fixed(const int n);
 		Fixed(const float f);
-		~Fixed();
 		Fixed(const Fixed &cp);
 		Fixed& operator=(const Fixed &other);
-
 		int getRawBits( void ) const;
 		void setRawBits ( int const raw );
 		float toFloat( void ) const;

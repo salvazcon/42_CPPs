@@ -2,67 +2,63 @@
 
 Fixed::~Fixed()
 { 
-	//std::cout << "Destructor called" << std::endl;
-	return ;
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(): i(0)
 { 
-	//std::cout << "Default constructor called" << std::endl;
-	return ;
+	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int n): i(n << 8)
+Fixed::Fixed(const int n): i(n << j)
 {
-	//std::cout << "Int constructor called" << std::endl;
-	return ;
+	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float f)
+Fixed::Fixed(const float f): i(roundf(f * (1 << j)))
 {
-	//std::cout << "Float constructor called" << std::endl;
-	i = roundf(f * (1 << j));
+	std::cout << "Float constructor called" << std::endl;
+}
+
+Fixed& Fixed::operator=(const Fixed &other)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->i = other.i;
+	return *this;
 }
 
 Fixed::Fixed(const Fixed &cp)
 {
-	//std::cout << "Copy constructor called" << std::endl;
-	this->i = cp.i;
+	std::cout << "Copy constructor called" << std::endl;
+	*this = cp;
 }
 
 int Fixed::getRawBits( void ) const
 {
-	//std::cout << "getRawBits member function called" << std::endl;
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->i);
 }
 
 void Fixed::setRawBits (int const raw)
 {
-	//std::cout << "setRawBits member function called" << std::endl;
+	std::cout << "setRawBits member function called" << std::endl;
 	this->i = raw;
-}
-
-float	Fixed::toFloat(void) const
-{
-	return (float)this->getRawBits() / (1 << j);
 }
 
 int		Fixed::toInt(void) const
 {
-	return (this->getRawBits() / (1 << j));
+	return (i >> j);
+}
+
+float	Fixed::toFloat(void) const
+{
+	return ((float)i / (1 << j));
 }
 
 std::ostream& operator<<(std::ostream& stout, const Fixed& Fixed)
 {
 	stout << Fixed.toFloat();
 	return stout;
-}
-
-Fixed& Fixed::operator=(const Fixed &other)
-{
-	//std::cout << "Copy assignment operator called" << std::endl;
-	this->i = other.getRawBits();
-	return *this;
 }
 
 Fixed Fixed::operator+(const Fixed &other) const

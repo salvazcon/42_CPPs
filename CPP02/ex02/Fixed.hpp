@@ -10,13 +10,18 @@ class Fixed
 	private:
 		int i;
 		static const int j = 8;
+	
 	public:
+		~Fixed();
 		Fixed();
 		Fixed(const int n);
 		Fixed(const float f);
-		~Fixed();
 		Fixed(const Fixed &cp);
 		Fixed& operator=(const Fixed &other);
+		int toInt( void ) const;
+		float toFloat( void ) const;
+		int getRawBits( void ) const;
+		void setRawBits ( int const raw );
 
 		Fixed operator+(const Fixed &other) const;
 		Fixed operator-(const Fixed &other) const;
@@ -40,10 +45,6 @@ class Fixed
 		static const Fixed& max(const Fixed& f1, const Fixed& f2);
 		static const Fixed& max(Fixed& f1, Fixed& f2);
 
-		int getRawBits( void ) const;
-		void setRawBits ( int const raw );
-		float toFloat( void ) const;
-		int toInt( void ) const;
 };
 
 std::ostream& operator<<(std::ostream& stout, const Fixed& Fixed);
