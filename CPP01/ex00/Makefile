@@ -1,5 +1,5 @@
-NAME		= horde
-SRCS		= main.cpp Zombie.cpp zombieHorde.cpp
+NAME		= program
+SRCS		= main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 OBJS		= ${SRCS:.cpp=.o}
 CC			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98

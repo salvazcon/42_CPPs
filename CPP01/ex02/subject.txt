@@ -18,4 +18,4 @@ Y luego:
 
 Eso es todo, sin trucos. El objetivo de este ejercicio es desmitificar las referencias que pueden
 parecer completamente nuevas. Aunque hay algunas pequeñas diferencias, esta es otra sintaxis
-para algo que ya haces: manipulación de direcciones
+para algo que ya haces: manipulación de direcciones.

@@ -14,8 +14,8 @@ class Harl
         void error();
 
     public:
-        Harl() {};
-        ~Harl() {};
+        ~Harl();
+        Harl();
         void complain(std::string nivel);
 };
 

@@ -10,7 +10,7 @@
 int main()
 {
 	{
-	//atexit(leaks);
+		//atexit(leaks);
 		Weapon club = Weapon("crude spiked club.");
 		HumanA bob("Bob", club);
 		bob.attack();

@@ -1,8 +1,5 @@
 NAME		= unnecessary_violence
-SRCS		= main.cpp \
-Weapon.cpp \
-HumanA.cpp \
-HumanB.cpp
+SRCS		= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJS		= ${SRCS:.cpp=.o}
 DEPS		= ${SRCS:.cpp=.d}
 CC			= c++

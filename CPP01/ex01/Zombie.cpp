@@ -1,23 +1,26 @@
-# include "Zombie.hpp"
+#include "Zombie.hpp"
 
-void Zombie::announce(void)
+Zombie::~Zombie() 
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << "Zombie " << this->name << " deztroyed" << std::endl;
 }
 
-Zombie::~Zombie(void)
+Zombie::Zombie()
 {
-	std::cout << name << " was slayed" << std::endl;
+	std::cout << "Zombie" << " createz" << std::endl;
 }
 
-Zombie::Zombie(void){ }
-
-Zombie::Zombie(std::string name)
-{ 
-	this->name=name;
+Zombie::Zombie(std::string name): name(name) 
+{
+	std::cout << "Zombie " << this->name << " createz" << std::endl;
 }
 
-void	Zombie::setName(std::string	name)
+void Zombie::announce()
 {
-	this->name=name;
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ" << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+	this->name = name;
 }

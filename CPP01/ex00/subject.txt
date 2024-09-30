@@ -1,8 +1,7 @@
 ¡Es hora de crear una horda de Zombies!
-
 Implementa la siguiente función en el archivo apropiado:
 
-    Zombie* zombieHorde( int N, std::string nombre );
+  Zombie* zombieHorde( int N, std::string nombre );
 
 Debe asignar N objetos Zombie en una única asignación. A continuación, debe inicializar los
 zombies, dando a cada uno de ellos el nombre pasado como parámetro. La función devuelve un
@@ -11,4 +10,4 @@ puntero al primer zombi.
 Implementa tus propias pruebas para asegurarte de que tu función zombieHorde() funciona como se espera.
 Intenta llamar a announce() para cada uno de los zombies.
 
-No olvides borrar todos los zombies y comprobar si hay fugas de memoria.
+No olvides borrar todos los zombies y comprobar si hay fugas de memoria
