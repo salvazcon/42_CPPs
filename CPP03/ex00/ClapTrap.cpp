@@ -6,6 +6,15 @@ ClapTrap::~ClapTrap()
     return ;
 }
 
+ClapTrap::ClapTrap( void )
+{
+    this->name = "";
+	this->hp = 10;
+	this->ps = 10;
+	this->power = 0;
+    std::cout << "Constructor called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
     this->name = name;
@@ -26,10 +35,10 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 	return *this;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &cp) : name(cp.name), hp(cp.hp), ps(cp.ps), power(cp.power)
+ClapTrap::ClapTrap(const ClapTrap &cp)
 {
 	std::cout << "Copy constructor called" << std::endl;
-    return;
+    *this = cp;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -40,7 +49,7 @@ void ClapTrap::attack(const std::string& target)
         {
             std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->power << " points of damage!" << std::endl;
             this->ps--;
-            std::cout << "ClapTrap " << this->name << " have " << this->ps << "pt of energy!" << std::endl;
+            std::cout << "ClapTrap " << this->name << " have " << this->ps << " pt of energy!" << std::endl;
         }
         else
             std::cout << "ClapTrap " << this->name << " have no energy left" << std::endl;
@@ -70,8 +79,9 @@ void ClapTrap::beRepaired(unsigned int amount)
         if(this->ps > 0)
         {
             std::cout << "ClapTrap " << this->name << " is being repaired, get " << amount << " hp points!" << std::endl;
+            this->hp++;
             this->ps--;
-            std::cout << "ClapTrap " << this->name << " have " << this->ps << "pt of energy!" << std::endl;
+            std::cout << "ClapTrap " << this->name << " have " << this->ps << " pt of energy and " << this->hp << "pt of health!" << std::endl;
         }
         else
             std::cout << "ClapTrap " << this->name << " have no energy left" << std::endl;

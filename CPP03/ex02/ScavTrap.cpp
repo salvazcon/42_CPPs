@@ -5,21 +5,13 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap destructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap( void )
+ScavTrap::ScavTrap(): ClapTrap("", 100, 50, 20) 
 {
-    this->name = "";
-	this->hp = 100;
-	this->ps = 50;
-	this->power = 20;
     std::cout << "ScavTrap constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)/* : ClapTrap(name) */
+ScavTrap::ScavTrap(std::string name): ClapTrap(name, 100, 50, 20)
 {
-    this->name = name;
-    this->hp = 100;
-    this->ps = 50;
-    this->power = 20;
     std::cout << "ScavTrap constructor called" << std::endl;
 }
 

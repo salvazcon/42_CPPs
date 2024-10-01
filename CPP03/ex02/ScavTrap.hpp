@@ -5,9 +5,11 @@
 
 class ScavTrap : public ClapTrap
 {
+	private:
+
 	public:
         ~ScavTrap();
-		ScavTrap(void);
+		ScavTrap();
         ScavTrap(std::string name);
 		ScavTrap(const ScavTrap &cp);
 		ScavTrap& operator=(const ScavTrap &other);

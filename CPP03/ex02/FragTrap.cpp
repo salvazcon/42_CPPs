@@ -5,21 +5,13 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap destructor called" << std::endl;
 }
 
-FragTrap::FragTrap( void )
+FragTrap::FragTrap(): ClapTrap("", 100, 100, 30) 
 {
-    this->name = "";
-	this->hp = 100;
-	this->ps = 100;
-	this->power = 30;
     std::cout << "FragTrap constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name)/* : ClapTrap(name) */
+FragTrap::FragTrap(std::string name): ClapTrap(name, 100, 100, 30)
 {
-    this->name = name;
-    this->hp = 100;
-    this->ps = 50;
-    this->power = 20;
     std::cout << "FragTrap constructor called" << std::endl;
 }
 
@@ -37,7 +29,6 @@ FragTrap::FragTrap(const FragTrap &cp): ClapTrap(cp)
 {
 	std::cout << "FragTrap copy constructor called" << std::endl;
 	*this = cp;
-	return;
 }
 
 void FragTrap::highFivesGuys()

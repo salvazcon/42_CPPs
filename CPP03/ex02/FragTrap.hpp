@@ -5,6 +5,8 @@
 
 class FragTrap : public ClapTrap
 {
+	private:
+
 	public:
         ~FragTrap();
 		FragTrap(void);
