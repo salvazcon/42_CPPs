@@ -3,14 +3,11 @@
 Dog::~Dog()
 {
     std::cout << "Dog Destructor called" << std::endl;
-    return ;
 }
 
-Dog::Dog( void )
+Dog::Dog(): Animal("Dog")
 {
-    this->type = "Dog";
     std::cout << "Dog Constructor called" << std::endl;
-    return ;
 }
 
 Dog& Dog::operator=(const Dog &other)
@@ -22,8 +19,8 @@ Dog& Dog::operator=(const Dog &other)
 
 Dog::Dog(const Dog &cp): Animal()
 {
-	this->type = cp.type;
 	std::cout << "Dog copy constructor called" << std::endl;
+    *this = cp;
 }
 
 void Dog::makeSound(void) const

@@ -3,13 +3,16 @@
 Animal::~Animal()
 {
     std::cout << "Animal Destructor called" << std::endl;
-    return ;
 }
 
-Animal::Animal( void ): type("Null")
+Animal::Animal(): type("Null")
 {
     std::cout << "Animal Constructor called" << std::endl;
-    return ;
+}
+
+Animal::Animal(std::string type): type(type)
+{
+    std::cout << "Animal Constructor called" << std::endl;
 }
 
 Animal& Animal::operator=(const Animal &other)
@@ -19,10 +22,10 @@ Animal& Animal::operator=(const Animal &other)
 	return *this;
 }
 
-Animal::Animal(const Animal &cp): type(cp.type)
+Animal::Animal(const Animal &cp)
 {
-	std::cout << "Animal copy constructor called" << std::endl;
-    return;
+    std::cout << "Animal copy constructor called" << std::endl;
+	*this = cp;
 }
 
 void Animal::makeSound(void) const

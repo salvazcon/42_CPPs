@@ -1,16 +1,16 @@
 #ifndef  CAT_HPP
 # define  CAT_HPP
 
-#include <iostream>
-#include <string>
 #include "Animal.hpp"
 #include "Brain.hpp"
 
 class Cat: public Animal
 {
     protected:
+
     private:
-        Brain*	_brain;
+        Brain*	brain;
+        
     public:
         ~Cat(void);
         Cat(void);
@@ -19,6 +19,7 @@ class Cat: public Animal
         virtual void makeSound( void ) const;
         void addIdea(std::string idea) const;
         std::string getIdea(int i) const;
+        virtual Brain* getBrain() const;
 };
 
 #endif

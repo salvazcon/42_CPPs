@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+class Brain;
+
 class Animal
 {
     protected:
@@ -12,13 +14,15 @@ class Animal
     private:
     
     public:
-        Animal(void);
+        virtual ~Animal();
+        Animal();
+        Animal(std::string type);
         Animal(const Animal &cp);
         Animal& operator=(const Animal &other);
-        virtual ~Animal(void);
-        virtual void makeSound( void ) const;
         void setType(std::string type);
         std::string getType(void) const;
+        virtual void makeSound(void) const;
+        virtual Brain* getBrain() const = 0;
 };
 
 #endif

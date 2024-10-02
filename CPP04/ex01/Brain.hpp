@@ -7,16 +7,19 @@
 class Brain
 {
     protected:
+
     private:
         std::string	ideas[100];
         int len;
+        
     public:
         ~Brain();
         Brain( void );
         Brain(const Brain &cp);
 		Brain& operator=(const Brain &other);
-        int getSize(void) const;
-        std::string getIdea(int i) const;
         void addIdea(std::string idea);
+        void printIdeas() const;
+        std::string getIdea(int i) const;
+        int getSize(void) const;
 };
 #endif
