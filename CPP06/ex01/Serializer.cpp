@@ -3,13 +3,11 @@
 Serializer::~Serializer()
 {
     std::cout << "Serializer Destructor called" << std::endl;
-    return ;
 }
 
 Serializer::Serializer( void )
 {
     std::cout << "Serializer Constructor called" << std::endl;
-    return ;
 }
 
 Serializer& Serializer::operator=(const Serializer &other)

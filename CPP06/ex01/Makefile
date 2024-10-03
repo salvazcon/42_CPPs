@@ -1,12 +1,9 @@
 NAME		= program
-SRCS		= main.cpp \
-				Data.cpp \
-				Serializer.cpp
-
+SRCS		= main.cpp Data.cpp Serializer.cpp
 OBJS		= ${SRCS:.cpp=.o}
 DEPS		= ${SRCS:.cpp=.d}
 CC			= c++
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 #-Wno-unused 
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
 
 all:		${NAME}

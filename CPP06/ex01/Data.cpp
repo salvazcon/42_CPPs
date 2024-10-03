@@ -3,19 +3,16 @@
 Data::~Data( void )
 {
     std::cout << "Data Destructor called" << std::endl;
-    return ;
 }
 
-Data::Data( void )
+Data::Data( void ): n(0)
 {
     std::cout << "Data Constructor called" << std::endl;
-    return ;
 }
 
 Data::Data( int num ): n(num)
 {
     std::cout << "Data Constructor called" << std::endl;
-    return ;
 }
 
 Data& Data::operator=(const Data &other)

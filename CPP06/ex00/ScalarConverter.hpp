@@ -1,15 +1,16 @@
 #ifndef  SCALARCONVERTER_HPP
 # define  SCALARCONVERTER_HPP
 
-#include <cmath>    // Mierdas de mates
-#include <string>   // String
-#include <cstring>  // Char*
-#include <climits>  // MAX & MIN
-#include <iostream> // Files stuff
+#include <cmath>
+#include <string>
+#include <cstring>
+#include <climits>
+#include <iostream>
 
 class ScalarConverter
 {
     protected:
+    
     private:
         ScalarConverter(void);
         ScalarConverter(const ScalarConverter &cp);

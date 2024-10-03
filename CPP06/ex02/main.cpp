@@ -19,28 +19,14 @@ Base* generate()
 
 void identify(Base *p) 
 {
-    Base* aux;
-	
-	aux = dynamic_cast<A *>(p);
-	if (aux)
-	{
-		std::cout << "A" << std::endl;
-		return ;
-	}
-	aux = dynamic_cast<B *>(p);
-	if (aux)
-	{
-		std::cout << "B" << std::endl;
-		return ;
-	}
-	aux = dynamic_cast<C *>(p);
-	if (aux)
-	{
-		std::cout << "C" << std::endl;
-		return ;
-	}
-	std::cout << "Unknown type" << std::endl;
-	
+	if (dynamic_cast<A*>(p))
+    	std::cout << "A" << std::endl;
+  	else if (dynamic_cast<B*>(p))
+    	std::cout << "B" << std::endl;
+  	else if (dynamic_cast<C*>(p))
+   		std::cout << "C" << std::endl;
+	else
+		std::cout << "Unknown type" << std::endl;
 }
 
 void identify(Base &p)
@@ -82,7 +68,7 @@ int main()
 	std::cout << "Random Tests: " << std::endl;
 	for (int i = 0; i < 10; i++) {
 		aux = generate();
-		identify(aux);
+		identify(*aux);
 		delete aux;
 	}
 }

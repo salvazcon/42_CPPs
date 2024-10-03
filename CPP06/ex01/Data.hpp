@@ -8,6 +8,7 @@
 class Data
 {
     protected:
+    
     private:
         int n;
 

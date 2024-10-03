@@ -30,6 +30,7 @@ while [ "$i" -lt "$#" ]; do
 class $NAME
 {
     protected:
+
     private:
     
     public:
@@ -45,13 +46,13 @@ class $NAME
 
 $NAME::~$NAME()
 {
-    std::cout << \"$NAME Destructor called\" << std::endl;
+    std::cout << \"$NAME destructor called\" << std::endl;
     return ;
 }
 
 $NAME::$NAME( void )
 {
-    std::cout << \"$NAME Constructor called\" << std::endl;
+    std::cout << \"$NAME constructor called\" << std::endl;
     return ;
 }
 

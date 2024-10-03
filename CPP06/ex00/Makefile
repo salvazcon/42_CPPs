@@ -1,7 +1,5 @@
 NAME		= program
-SRCS		= main.cpp \
-			ScalarConverter.cpp
-
+SRCS		= main.cpp ScalarConverter.cpp
 OBJS		= ${SRCS:.cpp=.o}
 DEPS		= ${SRCS:.cpp=.d}
 CC			= c++

@@ -36,6 +36,7 @@ echo "#ifndef  ${NAME^^}_HPP
 class $NAME
 {
     protected:
+    
     private:
     
     public:
@@ -52,13 +53,13 @@ echo "#include \"$NAME.hpp\"
 
 $NAME::~$NAME()
 {
-    std::cout << \"$NAME Destructor called\" << std::endl;
+    std::cout << \"$NAME destructor called\" << std::endl;
     return ;
 }
 
 $NAME::$NAME( void )
 {
-    std::cout << \"$NAME Constructor called\" << std::endl;
+    std::cout << \"$NAME constructor called\" << std::endl;
     return ;
 }
 

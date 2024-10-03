@@ -1,14 +1,12 @@
 #ifndef  SERIALIZER_HPP
 # define  SERIALIZER_HPP
 
-#include <stdint.h>
-#include <iostream>
-#include <string>
 #include "Data.hpp"
 
 class Serializer
 {
     protected:
+
     private:
         Serializer(void);
         Serializer(const Serializer &cp);

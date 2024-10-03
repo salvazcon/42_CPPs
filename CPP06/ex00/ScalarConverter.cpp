@@ -3,13 +3,11 @@
 ScalarConverter::~ScalarConverter()
 {
     std::cout << "ScalarConverter Destructor called" << std::endl;
-    return ;
 }
 
 ScalarConverter::ScalarConverter( void )
 {
     std::cout << "ScalarConverter Constructor called" << std::endl;
-    return ;
 }
 
 ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other)

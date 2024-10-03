@@ -9,7 +9,9 @@
 class Base
 {
     protected:
+
     private:
+    
     public:
 	    virtual ~Base() {};
 };
