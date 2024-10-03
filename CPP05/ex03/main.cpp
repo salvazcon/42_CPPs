@@ -9,17 +9,17 @@ int main() {
 	
 	srand(time(0));
 	{
-		Intern pitocorto;
+		Intern tocorto;
 		Bureaucrat b("Paco", 1);
 	
         std::cout << std::endl << std::endl;
-		AForm* s = pitocorto.makeForm("shrubbery creation", "steve");
+		AForm* s = tocorto.makeForm("shrubbery creation", "steve");
         std::cout << std::endl << std::endl;
-		AForm* r = pitocorto.makeForm("robotomy request", "josh");
+		AForm* r = tocorto.makeForm("robotomy request", "josh");
         std::cout << std::endl << std::endl;
-		AForm* p = pitocorto.makeForm("presidential pardon", "mike");
+		AForm* p = tocorto.makeForm("presidential pardon", "mike");
         std::cout << std::endl << std::endl;
-		pitocorto.makeForm("patata", "mike");
+		tocorto.makeForm("patata", "mike");
 
 		
 		b.signForm(*s);

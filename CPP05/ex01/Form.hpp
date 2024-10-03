@@ -1,8 +1,6 @@
 #ifndef  FORM_HPP
 # define  FORM_HPP
 
-#include <iostream>
-#include <string>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -10,6 +8,7 @@ class Bureaucrat;
 class Form
 {
     protected:
+    
     private:
         const   std::string name;
         bool                sign;
@@ -21,26 +20,28 @@ class Form
         Form(void);
         Form(std::string _name, int _signGrade, int _execGrade);
         Form(const Form &cp);
-		Form& operator=(const Form &other); //Por que lo privatizan???
+		Form& operator=(const Form &other);
         std::string         getName(void) const;
         bool                getSign(void) const;
         int                 getExecGrade(void) const;
         int                 getSignGrade(void) const;
         void                beSigned(const Bureaucrat &Obj);
     
-        class GradeTooHighException: public std::exception 
-        {
-            virtual const char* what() const throw() 
-            {
-                return "Exception: The grade is too high.";
+        class GradeTooHighException: public std::exception {
+            virtual const char* what() const throw() {
+                return "Grade too high.";
             }
         };
 
-        class GradeTooLowException: public std::exception 
-        {
-            virtual const char* what() const throw() 
-            {
-                return "Exception: The grade is too low.";
+        class GradeTooLowException: public std::exception {
+            virtual const char* what() const throw() {
+                return "Grade too low.";
+            }
+        };
+
+        class AlreadySignedException: public std::exception {
+            virtual const char* what() const throw() {
+                return "Already signed.";
             }
         };
 };

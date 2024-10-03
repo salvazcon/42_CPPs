@@ -3,25 +3,21 @@
 PresidentialPardonForm::~PresidentialPardonForm()
 {
     std::cout << "PresidentialPardonForm Destructor called" << std::endl;
-    return ;
 }
 
 PresidentialPardonForm::PresidentialPardonForm( void ): AForm("Presidential Pardon", 25, 5),  target("Non-Target")
 {
     std::cout << "PresidentialPardonForm Constructor called" << std::endl;
-    return ;
 }
 
 PresidentialPardonForm::PresidentialPardonForm( std::string _target ): AForm("Presidential Pardon", 25, 5), target(_target)
 {
     std::cout << "PresidentialPardonForm Constructor called" << std::endl;
-    return ;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cp): AForm(cp.getName(), 25, 5), target(cp.target)
 {
 	std::cout << "PresidentialPardonForm copy constructor called" << std::endl;
-    return ;
 }
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &other)

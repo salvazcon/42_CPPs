@@ -4,9 +4,9 @@ Ya que tienes formularios básicos, es hora de hacer algunos más que realmente 
 
 En todos los casos, la clase base Form debe ser una clase abstracta, y por lo tanto debe ser
 renombrada AForm. Tenga en cuenta que los atributos del formulario deben permanecer privados y que
-están en la clase base. //clase con en el =0
+están en la clase base.
 
-Añade las siguientes clases concretas: //cree tres metodos que tengan control de errores
+Añade las siguientes clases concretas:
 
     - ShrubberyCreationForm: Clases requeridas: sign 145, exec 137
     Crea un archivo <target>_shrubbery en el directorio de trabajo, y escribe árboles ASCII

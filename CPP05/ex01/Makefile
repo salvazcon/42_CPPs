@@ -1,7 +1,5 @@
 NAME		= program
-SRCS		= main.cpp \
-			Bureaucrat.cpp \
-			Form.cpp
+SRCS		= main.cpp Bureaucrat.cpp Form.cpp
 OBJS		= ${SRCS:.cpp=.o}
 DEPS		= ${SRCS:.cpp=.d}
 CC			= c++

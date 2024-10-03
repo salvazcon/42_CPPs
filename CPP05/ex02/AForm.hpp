@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include <iostream>
-#include <string>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -12,6 +10,7 @@ class Bureaucrat;
 class AForm
 {
     protected:
+    
     private:
         const   std::string name;
         bool                sign;
@@ -22,8 +21,8 @@ class AForm
         virtual ~AForm(void);
         AForm(void);
         AForm(std::string _name, int _signGrade, int _execGrade);
-        AForm(const AForm &cp);
 		AForm& operator=(const AForm &other);
+        AForm(const AForm &cp);
         std::string         getName(void) const;
         bool                getSign(void) const;
         int                 getExecGrade(void) const;
@@ -35,7 +34,7 @@ class AForm
         {
             virtual const char* what() const throw() 
             {
-                return "Exception: The grade is too high.";
+                return "Grade too high.";
             }
         };
 
@@ -43,7 +42,13 @@ class AForm
         {
             virtual const char* what() const throw() 
             {
-                return "Exception: The grade is too low.";
+                return "Grade too low.";
+            }
+        };
+
+        class AlreadySignedException: public std::exception {
+            virtual const char* what() const throw() {
+                return "Already signed.";
             }
         };
 

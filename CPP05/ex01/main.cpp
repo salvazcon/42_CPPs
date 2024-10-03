@@ -7,6 +7,7 @@ int main() {
 	} catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	std::cout << std::endl << std::endl;
 
 	try {
@@ -14,6 +15,7 @@ int main() {
 	} catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	std::cout << std::endl << std::endl;
 
 	try {
@@ -21,6 +23,7 @@ int main() {
 	} catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	std::cout << std::endl << std::endl;
 
 	try {
@@ -28,28 +31,19 @@ int main() {
 	} catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	std::cout << std::endl << std::endl;
 
 	{
-		Form f("fff", 100, 4);
-		Bureaucrat b("bbb", 101);
+		Form f("Fifo", 100, 4);
+		Bureaucrat a("Paco", 101);
+		Bureaucrat b("Pepe", 99);
+		std::cout << std::endl;
+		std::cout << f;
+		a.signForm(f);
 		b.signForm(f);
-	}
-
-	{
-		Form f("fff", 100, 4);
-		Bureaucrat b("bbb", 99);
+		std::cout << f;
 		b.signForm(f);
-		std::cout << f << std::endl;
-		b.signForm(f);
-	}
-
-	{
-		Form f("fff", 100, 4);
-		Form a(f);
-		Bureaucrat b("bbb", 10);
-		f.beSigned(b);
-		std::cout << f << std::endl;
-		std::cout << a << std::endl;
+		std::cout << std::endl;
 	}
 }

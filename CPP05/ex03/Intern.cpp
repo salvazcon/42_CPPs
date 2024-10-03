@@ -3,13 +3,11 @@
 Intern::~Intern()
 {
     std::cout << "Intern Destructor called" << std::endl;
-    return ;
 }
 
 Intern::Intern( void )
 {
     std::cout << "Intern Constructor called" << std::endl;
-    return ;
 }
 
 Intern::Intern(const Intern &cp)

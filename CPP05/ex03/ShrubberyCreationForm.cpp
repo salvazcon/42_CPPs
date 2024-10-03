@@ -3,25 +3,21 @@
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
     std::cout << "ShrubberyCreationForm Destructor called" << std::endl;
-    return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( void ): AForm("Shrubbery Creation Form", 145, 137),  target("Non-Target")
 {
     std::cout << "ShrubberyCreationForm Constructor called" << std::endl;
-    return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( std::string _target ): AForm("Shrubbery Creation Form", 145, 137),  target(_target)
 {
     std::cout << "ShrubberyCreationForm Constructor called" << std::endl;
-    return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &cp): AForm(cp.getName(), 145, 137), target(cp.target)
 {
 	std::cout << "ShrubberyCreationForm copy constructor called" << std::endl;
-	return ;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
@@ -52,7 +48,6 @@ void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	}
 	else
 		std::cout << "Error with the file!!" << std::endl;
-    return ;
 }
 
 std::string    ShrubberyCreationForm::getTarget(void)

@@ -2,26 +2,22 @@
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-    std::cout << "RobotomyRequestForm Destructor called" << std::endl;
-    return ;
+    std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( void ): AForm("Robotomy Request Form", 72, 45),  target("Non-Target")
 {
-    std::cout << "RobotomyRequestForm Constructor called" << std::endl;
-    return ;
+    std::cout << "RobotomyRequestForm constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( std::string _target ): AForm("Robotomy Request Form", 72, 45),  target(_target)
 {
-    std::cout << "RobotomyRequestForm Constructor called" << std::endl;
-    return ;
+    std::cout << "RobotomyRequestForm constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &cp): AForm(cp.getName(), 72, 45), target(cp.target)
 {
 	std::cout << "RobotomyRequestForm copy constructor called" << std::endl;
-    return ;
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
@@ -43,7 +39,6 @@ void    RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		std::cout << "Some drilling noises... " << this->target << " has been robotomized" << std::endl;
 	else
 		std::cout << "Robotomy failed" << std::endl;
-    return ;
 }
 
 std::string    RobotomyRequestForm::getTarget(void)

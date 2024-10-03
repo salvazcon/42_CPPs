@@ -7,6 +7,7 @@ int main()
 	} catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
+	
 	std::cout << std::endl << std::endl;
 
 	try {
@@ -14,26 +15,7 @@ int main()
 	} catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << std::endl << std::endl;
 
-	try {
-		Bureaucrat a("el cocas", 10);
-		for (int i = 0; i < 10; i++) {
-			a.incrementGrade();
-		}
-	} catch (const std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl << std::endl;
-
-	try {
-		Bureaucrat a("sassy", 131);
-		for (int i = 0; i < 20; i++) {
-			a.decrementGrade();
-		}
-	} catch (const std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
 	std::cout << std::endl << std::endl;
 
 	{
@@ -42,13 +24,14 @@ int main()
 		Bureaucrat c;
 		c = a;
 
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		std::cout << c << std::endl;
+		std::cout << std::endl;
+		std::cout << a;
+		std::cout << b;
+		std::cout << c;
 		b.incrementGrade();
 		c.decrementGrade();
-		std::cout << b << std::endl;
-		std::cout << a << std::endl;
+		std::cout << b;
+		std::cout << a;
 		std::cout << c << std::endl;
 	}
 }
