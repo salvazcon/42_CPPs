@@ -28,10 +28,10 @@ class Array
             std::cout << "Array params constructor called" << std::endl;
         };
 
-        T& operator[](std::size_t idx) {
-            if ((unsigned int) idx < len)
-                return arr[idx];
-            throw Array::InvalidIndexException();
+        T& operator[](std::size_t i) {
+            if (i < len)
+                return arr[i];
+            throw Array::InvalidLengthException();
         };
 
         Array& operator=(Array const &other)
@@ -55,9 +55,9 @@ class Array
             return this->len; 
         }
 
-        class InvalidIndexException: public std::exception {
+        class InvalidLengthException: public std::exception {
             virtual const char* what() const throw() {
-                return "Index is out of bounds";
+                return "Invalid Length";
             }
         };
 };
