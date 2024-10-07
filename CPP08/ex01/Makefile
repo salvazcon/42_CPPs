@@ -1,10 +1,9 @@
 NAME		= program
 SRCS		= main.cpp Span.cpp
-
 OBJS		= ${SRCS:.cpp=.o}
 DEPS		= ${SRCS:.cpp=.d}
 CC			= c++
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 #-Wno-unused 
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
 
 all:		${NAME}

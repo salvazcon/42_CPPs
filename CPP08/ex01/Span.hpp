@@ -14,18 +14,6 @@ class Span
         std::vector<int>	v;
         unsigned int        _size;
 
-        class InsufficientSpan: public std::exception {
-            virtual const char* what() const throw() {
-                return "Not enough elements";
-            }
-        };
-
-        class FullSpan: public std::exception {
-            virtual const char* what() const throw() {
-                return "The vector is full";
-            }
-        };
-
     public:
         ~Span(void);
         Span(void);
@@ -37,6 +25,18 @@ class Span
         void writeSpan(void);
         int longestSpan(void);
         int shortestSpan(void);
+
+        class InsufficientSpan: public std::exception {
+            virtual const char* what() const throw() {
+                return "Not enough elements.";
+            }
+        };
+
+        class ExceptionFull: public std::exception {
+            virtual const char* what() const throw() {
+                return "The vector is full.";
+            }
+        };
 };
 
 #endif

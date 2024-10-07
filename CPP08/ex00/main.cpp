@@ -1,6 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <list>
 #include "Easyfind.hpp"
 
 int main( void ) 

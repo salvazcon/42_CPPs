@@ -16,19 +16,13 @@ class MutantStack : public std::stack<T>
 
         typedef typename std::deque<T>::iterator iterator;
     
-        ~MutantStack(void)
-        {
-            return;
-        };
-    
-        MutantStack(void): std::stack<T>()
-        {
-            return;
-        };
-    
+        ~MutantStack(void){};
+        
+        MutantStack(void): std::stack<T>(){};
+
         MutantStack(const MutantStack &cp)
-        {
-            *this = cp;      
+        { 
+            *this = cp;
         };
 	
     	MutantStack& operator=(const MutantStack &other)

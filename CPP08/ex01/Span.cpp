@@ -2,27 +2,24 @@
 
 Span::~Span()
 {
-    std::cout << "Span Destructor called" << std::endl;
-    return ;
+    std::cout << "Span destructor called" << std::endl;
 }
 
 Span::Span( void ): _size(0)
 {
-    std::cout << "Span Constructor called" << std::endl;
-    return ;
+    std::cout << "Span constructor called" << std::endl;
 }
 
 Span::Span( unsigned int n ): _size(n)
 {
-    std::cout << "Span Constructor called" << std::endl;
-    return ;
+    std::cout << "Span constructor called" << std::endl;
 }
 
 Span& Span::operator=(const Span &other)
 {
+	std::cout << "Span copy assignment operator called" << std::endl;
     this->v = other.v;
     this->_size = other._size;
-	std::cout << "Span copy assignment operator called" << std::endl;
 	return *this;
 }
 
@@ -35,8 +32,7 @@ Span::Span(const Span &cp)
 void Span::addNumber(int n)
 {
 	if (this->v.size() == _size)
-		throw FullSpan();
-    
+		throw ExceptionFull();
 	this->v.push_back(n);
 }
 
