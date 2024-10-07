@@ -1,9 +1,5 @@
-#include "BitcoinExchange.hpp"
+#include "Bitcoin.hpp"
 #include "Date.hpp"
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <map>
 
 int fk_space(std::string str, int i, int size, int csv)
 {
@@ -12,10 +8,10 @@ int fk_space(std::string str, int i, int size, int csv)
     return i;
 }
 
-std::string* ft_parser_data(std::string str, int csv)
+std::vector<std::string> ft_parser_data(std::string str, int csv)
 {
     int size = str.length();
-    std::string* arr = new std::string[2];
+    std::vector<std::string> arr(2);
     int i = 0;
 
     i = fk_space(str, i, size, csv);
@@ -25,7 +21,7 @@ std::string* ft_parser_data(std::string str, int csv)
         i++;
     }
     i = fk_space(str, i, size, csv);
-    while((i < size) && (str[i] != 32))
+    while((i < size))
     {
         arr[1] += str[i];
         i++;
@@ -37,48 +33,46 @@ int main(int argc, char *argv[])
 {
     if(argc < 2)
     {
-        std::cerr << "Arguments Error." << std::endl;
+        std::cerr << "Error: Invalid Arguments." << std::endl;
         return(1); 
     }
     std::ifstream	fd2(argv[1]);
     std::ifstream	fd1("./data.csv");
     if(!fd1.is_open() || !fd2.is_open())
     {
-        std::cerr << "File Error." << std::endl;
+        std::cerr << "Error: cannot open data file" << std::endl;
         return 1;
     }
     std::string str;
-    std::string* arr;
-    std::map<std::string, std::string> BddMap;
+    std::map<Date, Bitcoin> BddMap;
+    std::vector<std::string> arr;
     while (std::getline(fd1, str))
     {
-        arr = ft_parser_data(str, 44); //44 -> ',' en ASCII. 124 -> '|'
-        BddMap.insert(std::make_pair(arr[0], arr[1]));
-        delete[] arr;
+        arr = ft_parser_data(str, 44);
+        try {
+            Date fecha1(arr[0]);
+            Bitcoin coin1(arr[1], 0);
+            BddMap.insert(std::make_pair(fecha1, coin1));
+        }
+        catch (const std::exception& e) {
+		    std::cout << e.what() << std::endl;
+        }
     }
     fd1.close();
     while (std::getline(fd2, str))
     {
-        arr = ft_parser_data(str, 124); //44 -> ',' en ASCII. 124 -> '|'
-        std::cout << "Primer dato: " << arr[0] << std::endl;
-        std::cout << "Segundo dato: " << arr[1] << std::endl;
-        delete[] arr;
+        arr = ft_parser_data(str, 124);
+        try {
+            Date fecha2(arr[0]);
+            Bitcoin coin2(arr[1], 1);
+            std::map<Date, Bitcoin>::iterator it = BddMap.lower_bound(fecha2);
+            std::cout << fecha2 << " => " << coin2 << " = " << 
+            (it->second.getBitcoin() * coin2.getBitcoin()) << std::endl;
+        }
+        catch (const std::exception& e) {
+		    std::cout << e.what() << std::endl;
+        }
     }
     fd2.close();
     return 0;
 }
-    /* Error:
-    - Si esta vacio alguno de los valores
-    - Valor valido
-    - Fecha valida
-    - Numero entre 0 y 10000
-    */
-
-//Por lo que parece tengo dos bases de datos a comparar, la que viene por arg y otra que ya viene establecida.
-/*Debo hacer:
-
-    - El parseo de los datos que llega por parametro.
-    - Hacer el calculo de intercambio y mostrarlo.
-    - Lo que se debe guardar en el programa es la base de datos de los diferentes precios.
-*/
-    
