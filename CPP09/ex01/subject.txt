@@ -1,0 +1,39 @@
+Ejercicio 01: Notación Polaca Inversa
+
+Debe crear un programa con estas restricciones:
+- El nombre del programa es RPN.
+
+- Tu programa debe tomar como argumento una expresión matemática polaca
+ invertida.
+
+- Los números utilizados en esta operación y pasados como argumentos serán
+ siempre menores de 10. Tanto el cálculo en sí como el resultado no tienen
+ en cuenta esta regla.
+
+- Su programa debe procesar esta expresión y mostrar el resultado correcto
+en la salida estándar
+
+- Si se produce un error durante la ejecución del programa se debe mostrar
+un mensaje de error en la salida estándar.
+
+- Su programa debe ser capaz de manejar operaciones como: «+ - / *».
+
+Debes utilizar al menos un contenedor en tu código para validar este
+ejercicio.
+
+No necesitas manejar los paréntesis ni los números decimales.
+
+Aquí tienes un ejemplo de uso estándar:
+
+    $> ./RPN "8 9 * 9 - 9 - 9 - 4 - 1 +"
+    42
+    $> ./RPN "7 7 * 7 -"
+    42
+    $> ./RPN "1 2 * 2 / 2 * 2 4 - +"
+    0
+    $> ./RPN "(1 + 1)"
+    Err
+
+Advertencia: El contenedor(es) que usaste en el ejercicio anterior están
+prohibidos aquí. El contenedor(es) que utilizaste para validar este ejercicio
+no serán utilizables para el resto de este módulo.

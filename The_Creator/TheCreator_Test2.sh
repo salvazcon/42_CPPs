@@ -47,13 +47,11 @@ class $NAME
 $NAME::~$NAME()
 {
     std::cout << \"$NAME destructor called\" << std::endl;
-    return ;
 }
 
 $NAME::$NAME( void )
 {
     std::cout << \"$NAME constructor called\" << std::endl;
-    return ;
 }
 
 $NAME& $NAME::operator=(const $NAME &other)
