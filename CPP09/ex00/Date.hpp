@@ -32,6 +32,7 @@ class Date
         int getDay() const;
 
         class ExceptionInvalidDate: public std::exception {
+        public:
             virtual const char* what() const throw() {
                 return "Error: bad input";
             }

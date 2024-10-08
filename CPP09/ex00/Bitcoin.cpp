@@ -12,25 +12,26 @@ Bitcoin::Bitcoin( void ): bitcoin(0)
 
 Bitcoin::Bitcoin(std::string coin, int n)
 {
-    //std::cout << "Bitcoin constructor called" << std::endl;
-    int j = 0;
+    bool foundPoint = false;
     if(coin[0] == '-')
         throw ExceptionNegativedNumber();
-    if(coin.size() == 0)
+    if (coin.empty())
         throw ExceptionInvalidNumber();
-    for (size_t i = 0; i < coin.size(); ++i) {
-        if (!std::isdigit(static_cast<unsigned char>(coin[i])) && coin[i] != '.') {
-            throw ExceptionInvalidNumber();
-        }
-        if (coin[i] == '.')
+    for (size_t i = 0; i < coin.size(); ++i) 
+    {
+        if (!std::isdigit(static_cast<unsigned char>(coin[i])))
         {
-            j++;
-            if(j > 1)
+            if (coin[i] == '.') {
+                if (foundPoint)
+                    throw ExceptionInvalidNumber();
+                foundPoint = true;
+            } else
                 throw ExceptionInvalidNumber();
         }
     }
+
     float aux = static_cast<float>(atof(coin.c_str()));
-    if(n == 1 && aux < 1000 && aux > 0 )
+    if(n == 1 && aux <= 1000 && aux >= 0 )
         this->bitcoin = aux;
     else if(n == 0)
         this->bitcoin = aux;

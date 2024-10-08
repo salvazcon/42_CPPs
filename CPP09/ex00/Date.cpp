@@ -14,19 +14,13 @@ Date::Date( void ): year(0), month(0), day(0)
 
 Date::Date(std::string date) 
 {
-	int i = 0;
-
 	if (date.length() != 10)
 		throw ExceptionInvalidDate();
-	while(i < 10) 
-    {
-		if (i == 4 || i == 7) {
-			if (date[i] != '-')
-				throw ExceptionInvalidDate();
-		}
-		else if (!isdigit(date[i]))
+	for (int i = 0; i < 10; ++i) {
+		if ((i == 4 || i == 7) && date[i] != '-')
+            throw ExceptionInvalidDate();
+		else if ((i != 4 && i != 7) && !isdigit(date[i]))
 			throw ExceptionInvalidDate();
-        i++;
 	}
 	int _year = atoi(date.substr(0, 4).c_str());
 	int _month = atoi(date.substr(5, 2).c_str());

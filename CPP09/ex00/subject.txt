@@ -57,7 +57,7 @@ El siguiente es un ejemplo de uso del programa.
     Error: no es un número positivo
     Error: entrada incorrecta => 2001-42-42
     2012-01-11 => 1 = 7.1
-    Error: número demasiado grande.
+    Error: número demasiado grande. 
     $>
 
 Advertencia: El contenedor(es) que utilices para validar este ejercicio no será
