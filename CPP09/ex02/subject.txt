@@ -1,0 +1,69 @@
+Ejercicio : 02 PmergeMe
+ 
+Debe crear un programa con estas restricciones:
+
+    - El nombre del programa es PmergeMe.
+    - Tu programa debe poder usar una secuencia de enteros positivos como argumento.
+    - Su programa debe usar el algoritmo de ordenación fusión-inserción para ordenar 
+    la secuencia de enteros positivos.
+
+Para aclarar, sí, debe utilizar el algoritmo Ford-Johnson.
+
+    - Si se produce un error durante la ejecución del programa, un mensaje de error 
+    debe ser en la salida estándar.
+
+Debes utilizar al menos dos contenedores diferentes en tu código para
+validar este ejercicio. Tu programa debe ser capaz de manejar al menos
+al menos 3000 enteros diferentes.
+
+Se recomienda encarecidamente que implemente su algoritmo para cada contenedor
+y evitar así el uso de una función genérica.
+
+He aquí algunas directrices adicionales sobre la información que debe mostrar línea 
+por línea en la salida estándar:
+
+    - En la primera línea debe mostrar un texto explícito seguido de la secuencia de 
+    enteros positivos sin ordenar.
+
+    - En la segunda línea debe mostrar un texto explícito seguido de la secuencia de 
+    ordenada de enteros positivos.
+
+    - En la tercera línea debe mostrar un texto explícito indicando el tiempo 
+    utilizado por su algoritmo especificando el primer contenedor utilizado para 
+    ordenar la secuencia de enteros positivos.
+
+    - En la última línea debe mostrar un texto explícito que indique el tiempo 
+    utilizado por su algoritmo especificando el segundo contenedor utilizado para
+    ordenar la secuencia de enteros positivos. 
+
+El formato de visualización del tiempo empleado para realizar su ordenación
+es libre pero la precisión elegida debe permitir ver claramente la diferencia
+entre los dos contenedores utilizados.
+
+He aquí un ejemplo de utilización estándar:
+
+    $> ./PmergeMe 3 5 9 7 4
+    Antes: 3 5 9 7 4
+    Después 3 4 5 7 9
+    Tiempo para procesar un rango de 5 elementos con std::[..] : 0.00031 us
+    Tiempo para procesar un rango de 5 elementos con std::[..] : 0.00014 us
+    $> ./PmergeMe `shuf -i 1-100000 -n 3000 | tr «\n» « »`
+    Antes: 141 79 526 321 [...]
+    Después: 79 141 321 526 [...]
+    Tiempo para procesar un rango de 3000 elementos con std::[..] : 62.14389 us
+    Tiempo para procesar un rango de 3000 elementos con std::[..] : 69.27212 us
+    $> ./PmergeMe «-1» «2»
+    Error
+    $> # Para USUARIO OSX
+    $> ./PmergeMe `jot -r 3000 1 100000 | tr '\n' ' '`
+    [...]
+    $>
+
+La indicación de la hora es deliberadamente extraña en este ejemplo.
+Por supuesto, usted tiene que indicar el tiempo utilizado para realizar todas sus
+operaciones, tanto la parte de ordenación como la parte de gestión de datos.
+
+Atención: El contenedor o contenedores que utilizó en los ejercicios anteriores 
+están prohibidos aquí.
+
+La gestión de los errores relacionados con los duplicados se deja a su discreción.
