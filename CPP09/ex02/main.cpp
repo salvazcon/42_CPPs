@@ -1,14 +1,4 @@
-//#include ".hpp"
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <cctype>
-#include <vector>
-#include <stack>
-#include <list>
-#include <cstdlib>
-#include <algorithm>
-
+#include "PmergeMe.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -18,24 +8,48 @@ int main(int argc, char *argv[])
         return 1; 
     }
 
-    int num;
-    std::list<int> myList;
-    for(int i = 0; i < argc; i++)
+    double aux;
+    double time;
+    clock_t start, end;
+    std::list<double> myList;
+    for(int i = 1; i < argc; i++)
     {
-        for(int j = 0; j < strlen(argv[1]); j++ )
+        for(size_t j = 0; j < strlen(argv[i]); j++)
         {
             if(!isdigit(argv[i][j]))
             {
-                std::cout << "Err" << std::endl;
+                std::cerr << "Err" << std::endl;
                 return 1;
             }
         }
-        num = atoi(argv[i]);
-        if(std::find(myList.begin(), myList.end(), num) != myList.end())
+        aux = strtod(argv[i], NULL);
+        if(std::find(myList.begin(), myList.end(), aux) != myList.end())
         {
-            std::cout << "Err" << std::endl;
+            std::cerr << "Err" << std::endl;
             return 1;
         }
-        myList.push_front(num);
+        myList.push_back(aux);
     }
+
+    PmergeMe num(myList);
+
+    std::cout << "Antes: ";
+    num.printContainer(num.getList());
+
+    start = clock();
+    num.johnsonSort(num.getList());
+    end = clock();
+    time = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+
+    std::cout << "Despues: ";
+    num.printContainer(num.getList());
+    
+    std::cout << "Time to process a range of " << argc - 1 << " elements with std::list " << time * 1000 << " ms." << std::endl;
+
+    start = clock();
+    num.johnsonSort(num.getVector());
+    end = clock();
+    time = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+    
+    std::cout << "Time to process a range of " << argc - 1 << " elements with std::vector " << time * 1000 << " ms." << std::endl;
 }
