@@ -1,7 +1,9 @@
 #include "Harl.hpp"
 
-int main(int argv, char **argc)
+int main()
 {
+	Harl harl;
+
     std::cout << "-----------------------------------------------" << std::endl;
 	std::cout << "- DEBUG:" << std::endl;
 	harl.complain("DEBUG");
