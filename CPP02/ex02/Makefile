@@ -1,7 +1,7 @@
 NAME		= program
 SRCS		= main.cpp \
 				Fixed.cpp
-OBJS		= ${SRCS:.cpp=.o}
+OBJS		= ${SRCS:%.cpp=%.o}
 DEPS		= ${SRCS:.cpp=.d}
 CC			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -10,7 +10,10 @@ RM			= rm -f
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			${CC} ${CPPFLAGS} ${OBJS} -o ${NAME}
+	${CC} ${CPPFLAGS} ${OBJS} -o ${NAME}
+
+%.o: %.cpp
+			$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
 			${RM} ${OBJS} ${DEPS}
