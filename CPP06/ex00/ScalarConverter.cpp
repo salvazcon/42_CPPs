@@ -42,7 +42,7 @@ void SpecialDoublePrinter(std::string str)
 
 void write_char(int c)
 {
-	if (c > 32 && c < 127 && isprint(c))
+	if (c > 31 && c < 127 && isprint(c))
 		std::cout << "char: '" << static_cast<char>(c) << "'" << std::endl;
 	else
 		std::cout << "char: Not displayable" << std::endl;
