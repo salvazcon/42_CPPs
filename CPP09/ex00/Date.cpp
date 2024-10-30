@@ -42,7 +42,7 @@ bool Date::operator<(const Date& other) const
         return false;}
     if (this->month < other.month){
         return true;}
-    return this->day < other.day;
+    return this->day > other.day;
 }
 
 std::ostream& operator<<(std::ostream& stout, const Date& Date)
